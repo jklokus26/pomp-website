@@ -1,0 +1,19 @@
+{
+  "name": "pomp-website",
+  "version": "1.0.0",
+  "description": "Anthony Pompliano personal website - Entrepreneur, Investor, Bitcoiner",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python3 -m http.server 8000",
+    "preview": "python3 -m http.server 8000"
+  },
+  "keywords": [
+    "anthony-pompliano",
+    "pomp",
+    "bitcoin",
+    "podcast",
+    "newsletter"
+  ],
+  "author": "Anthony Pompliano",
+  "license": "MIT"
+}
