@@ -6,17 +6,16 @@
 }
 
 :root {
-    /* Colors - From the Desk Branding */
-    --color-royal-blue: #1E4A7C;
-    --color-royal-blue-light: #2A5A8E;
-    --color-royal-blue-dark: #15395F;
+    /* Colors - Navy Blue Theme */
+    --color-navy: #0A1628;
+    --color-navy-light: #162942;
+    --color-navy-dark: #050B14;
     --color-white: #FFFFFF;
     --color-cream: #F8F6F3;
-    --color-accent: #2A5A8E;
-    --color-gold: #D4A649;
-    --color-gold-dark: #B8903D;
-    --color-text-gray: #A8B8C8;
-    --color-border: #3D5F87;
+    --color-accent: #1E3A5F;
+    --color-gold: #D4AF37;
+    --color-text-gray: #8B9BA8;
+    --color-border: #2A3F5F;
 
     /* Typography */
     --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -43,7 +42,7 @@ body {
     font-size: 18px;
     line-height: 1.6;
     color: var(--color-white);
-    background-color: var(--color-royal-blue-dark);
+    background-color: var(--color-navy-dark);
     overflow-x: hidden;
 }
 
@@ -62,7 +61,7 @@ body {
 }
 
 .nav.scrolled {
-    background-color: var(--color-royal-blue);
+    background-color: var(--color-navy);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
@@ -121,7 +120,7 @@ body {
 
 .nav-cta {
     background-color: var(--color-gold);
-    color: var(--color-royal-blue-dark);
+    color: var(--color-navy);
     padding: 10px 24px;
     border-radius: 8px;
     text-decoration: none;
@@ -132,13 +131,13 @@ body {
 
 .nav-cta:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(212, 166, 73, 0.4);
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
 }
 
 /* ===== Hero Section ===== */
 .hero {
     min-height: 100vh;
-    background: linear-gradient(135deg, var(--color-royal-blue-dark) 0%, var(--color-royal-blue) 50%, var(--color-royal-blue-light) 100%);
+    background: linear-gradient(135deg, var(--color-navy-dark) 0%, var(--color-navy) 50%, var(--color-navy-light) 100%);
     color: var(--color-white);
     display: flex;
     align-items: center;
@@ -157,8 +156,8 @@ body {
     right: 0;
     bottom: 0;
     background:
-        radial-gradient(circle at 20% 50%, rgba(212, 166, 73, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(212, 166, 73, 0.05) 0%, transparent 50%);
+        radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.05) 0%, transparent 50%);
     pointer-events: none;
 }
 
@@ -195,7 +194,7 @@ body {
     width: 320px;
     height: 320px;
     margin: 0 auto var(--spacing-xl);
-    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-royal-blue-light) 100%);
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-navy-light) 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -205,7 +204,7 @@ body {
     border: 3px solid var(--color-gold);
     box-shadow:
         0 20px 60px rgba(0, 0, 0, 0.3),
-        inset 0 0 60px rgba(212, 166, 73, 0.1);
+        inset 0 0 60px rgba(212, 175, 55, 0.1);
     position: relative;
 }
 
@@ -308,14 +307,14 @@ body {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-dark) 100%);
-    color: var(--color-royal-blue-dark);
-    box-shadow: 0 4px 15px rgba(212, 166, 73, 0.3);
+    background: linear-gradient(135deg, var(--color-gold) 0%, #BF9B30 100%);
+    color: var(--color-navy);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 25px rgba(212, 166, 73, 0.5);
+    box-shadow: 0 6px 25px rgba(212, 175, 55, 0.5);
 }
 
 .btn-secondary {
@@ -325,7 +324,7 @@ body {
 }
 
 .btn-secondary:hover {
-    background-color: rgba(212, 166, 73, 0.1);
+    background-color: rgba(212, 175, 55, 0.1);
     border-color: var(--color-gold);
     transform: translateY(-2px);
 }
@@ -355,7 +354,7 @@ section {
 
 /* ===== Podcast Section ===== */
 .podcast {
-    background: linear-gradient(180deg, var(--color-royal-blue-dark) 0%, var(--color-royal-blue) 100%);
+    background: linear-gradient(180deg, var(--color-navy-dark) 0%, var(--color-navy) 100%);
     border-top: 1px solid var(--color-border);
 }
 
@@ -494,7 +493,7 @@ section {
 
 /* ===== From the Desk Section ===== */
 .from-the-desk {
-    background: linear-gradient(180deg, var(--color-royal-blue) 0%, var(--color-royal-blue-light) 100%);
+    background: linear-gradient(180deg, var(--color-navy) 0%, var(--color-navy-light) 100%);
     border-top: 1px solid var(--color-border);
 }
 
@@ -536,7 +535,7 @@ section {
 
 /* ===== Newsletter Section ===== */
 .newsletter {
-    background: linear-gradient(180deg, var(--color-royal-blue) 0%, var(--color-royal-blue-dark) 100%);
+    background: linear-gradient(180deg, var(--color-navy) 0%, var(--color-navy-dark) 100%);
     color: var(--color-white);
     text-align: center;
     border-top: 1px solid var(--color-border);
@@ -657,8 +656,8 @@ section {
 }
 
 .investments .section-title {
-    color: var(--color-royal-blue);
-    background: linear-gradient(135deg, var(--color-royal-blue) 0%, var(--color-accent) 100%);
+    color: var(--color-navy);
+    background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-accent) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -677,7 +676,7 @@ section {
     position: relative;
     aspect-ratio: 1;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--color-royal-blue) 0%, var(--color-royal-blue-light) 100%);
+    background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-navy-light) 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -688,8 +687,8 @@ section {
     transition: all 0.4s ease;
     box-shadow:
         0 20px 60px rgba(10, 22, 40, 0.2),
-        inset 0 0 60px rgba(212, 166, 73, 0.05);
-    border: 2px solid rgba(212, 166, 73, 0.2);
+        inset 0 0 60px rgba(212, 175, 55, 0.05);
+    border: 2px solid rgba(212, 175, 55, 0.2);
 }
 
 .investment-card::before {
@@ -710,7 +709,7 @@ section {
     transform: translateY(-10px) scale(1.05);
     box-shadow:
         0 30px 80px rgba(10, 22, 40, 0.3),
-        inset 0 0 80px rgba(212, 166, 73, 0.1);
+        inset 0 0 80px rgba(212, 175, 55, 0.1);
 }
 
 .investment-card:hover::before {
@@ -747,7 +746,7 @@ section {
 
 /* ===== Book Section ===== */
 .book {
-    background: linear-gradient(180deg, var(--color-royal-blue-dark) 0%, var(--color-royal-blue) 100%);
+    background: linear-gradient(180deg, var(--color-navy-dark) 0%, var(--color-navy) 100%);
     border-top: 1px solid var(--color-border);
 }
 
@@ -789,8 +788,8 @@ section {
 
 .book-badge {
     display: inline-block;
-    background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-dark) 100%);
-    color: var(--color-royal-blue);
+    background: linear-gradient(135deg, var(--color-gold) 0%, #BF9B30 100%);
+    color: var(--color-navy);
     padding: 8px 16px;
     border-radius: 8px;
     font-weight: 700;
@@ -823,7 +822,7 @@ section {
 
 /* ===== Social Section ===== */
 .social {
-    background: linear-gradient(180deg, var(--color-royal-blue) 0%, var(--color-royal-blue-dark) 100%);
+    background: linear-gradient(180deg, var(--color-navy) 0%, var(--color-navy-dark) 100%);
     border-top: 1px solid var(--color-border);
 }
 
@@ -835,7 +834,7 @@ section {
 }
 
 .social-card {
-    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-royal-blue-light) 100%);
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-navy-light) 100%);
     padding: var(--spacing-lg);
     border-radius: 20px;
     text-align: center;
@@ -854,7 +853,7 @@ section {
 
 .social-card-twitter {
     border: 2px solid var(--color-gold);
-    background: linear-gradient(135deg, var(--color-royal-blue-light) 0%, var(--color-accent) 100%);
+    background: linear-gradient(135deg, var(--color-navy-light) 0%, var(--color-accent) 100%);
 }
 
 .social-icon {
@@ -881,8 +880,8 @@ section {
 
 .social-cta {
     display: inline-block;
-    background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-dark) 100%);
-    color: var(--color-royal-blue);
+    background: linear-gradient(135deg, var(--color-gold) 0%, #BF9B30 100%);
+    color: var(--color-navy);
     padding: 10px 24px;
     border-radius: 8px;
     font-weight: 700;
@@ -898,7 +897,7 @@ section {
 
 /* ===== Footer ===== */
 .footer {
-    background-color: var(--color-royal-blue-dark);
+    background-color: var(--color-navy-dark);
     color: var(--color-white);
     padding: var(--spacing-xl) var(--spacing-md);
     border-top: 1px solid var(--color-border);
