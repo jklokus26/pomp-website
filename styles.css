@@ -160,14 +160,13 @@ body {
 .hero-background-placeholder {
     width: 100%;
     height: 100%;
-    background-image: url('pomp-hero-new.jpg');
-    background-size: auto 100%;
-    background-position: 65% center;
+    background-image: url('hero-bg.png');
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
-    animation: subtleZoom 20s ease-in-out infinite alternate;
 }
 
-/* Animated gradient overlay on background */
+/* Portrait layer with animation */
 .hero-background-placeholder::before {
     content: '';
     position: absolute;
@@ -175,12 +174,11 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-        90deg,
-        transparent 0%,
-        rgba(30, 58, 95, 0.1) 50%,
-        rgba(30, 58, 95, 0.2) 100%
-    );
+    background-image: url('pomp-portrait.png');
+    background-size: auto 100%;
+    background-position: 65% center;
+    background-repeat: no-repeat;
+    animation: subtleZoom 20s ease-in-out infinite alternate;
     pointer-events: none;
 }
 
