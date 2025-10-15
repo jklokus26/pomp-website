@@ -171,12 +171,12 @@ body {
     content: '';
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;
+    right: 0;
+    width: 45%;
     height: 100%;
     background-image: url('pomp-portrait.png');
-    background-size: auto 100%;
-    background-position: 65% center;
+    background-size: contain;
+    background-position: right center;
     background-repeat: no-repeat;
     animation: subtleZoom 20s ease-in-out infinite alternate;
     pointer-events: none;
@@ -191,10 +191,10 @@ body {
     bottom: 0;
     background: linear-gradient(
         90deg,
-        rgba(30, 58, 95, 0.95) 0%,
-        rgba(30, 58, 95, 0.7) 40%,
-        rgba(30, 58, 95, 0.3) 70%,
-        transparent 100%
+        rgba(30, 58, 95, 0.98) 0%,
+        rgba(30, 58, 95, 0.85) 35%,
+        rgba(30, 58, 95, 0.4) 60%,
+        transparent 85%
     );
     z-index: 1;
     pointer-events: none;
@@ -210,7 +210,7 @@ body {
     flex-direction: column;
     align-items: flex-start;
     padding-left: 80px;
-    padding-right: 50%;
+    padding-right: 55%;
 }
 
 .hero-title {
