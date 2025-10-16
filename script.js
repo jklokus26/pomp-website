@@ -6,11 +6,14 @@ const navLinks = document.querySelectorAll('.nav-link');
 
 // Mobile menu toggle
 navToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
+    const isActive = navMenu.classList.toggle('active');
+
+    // Update ARIA attribute for accessibility
+    navToggle.setAttribute('aria-expanded', isActive);
 
     // Animate hamburger icon
     const spans = navToggle.querySelectorAll('span');
-    if (navMenu.classList.contains('active')) {
+    if (isActive) {
         spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
         spans[1].style.opacity = '0';
         spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
@@ -25,6 +28,8 @@ navToggle.addEventListener('click', () => {
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
         navMenu.classList.remove('active');
+        navToggle.setAttribute('aria-expanded', 'false');
+
         const spans = navToggle.querySelectorAll('span');
         spans[0].style.transform = 'none';
         spans[1].style.opacity = '1';
@@ -76,22 +81,46 @@ newsletterForm.addEventListener('submit', (e) => {
 
     const emailInput = newsletterForm.querySelector('input[type="email"]');
     const email = emailInput.value;
+    const formStatus = document.getElementById('form-status');
 
     // Basic email validation
     if (!email || !email.includes('@')) {
-        alert('Please enter a valid email address.');
+        // Show error message for screen readers and users
+        formStatus.textContent = 'Please enter a valid email address.';
+        formStatus.className = 'form-status error';
+        emailInput.setAttribute('aria-invalid', 'true');
+        emailInput.focus();
         return;
     }
 
+    // Remove error state
+    emailInput.removeAttribute('aria-invalid');
+
     // Show success message (in production, this would send to a backend)
-    alert('Thank you for subscribing! Welcome to The Pomp Letter.');
+    formStatus.textContent = 'Thank you for subscribing! Welcome to The Pomp Letter.';
+    formStatus.className = 'form-status success';
     emailInput.value = '';
+
+    // Hide success message after 5 seconds
+    setTimeout(() => {
+        formStatus.className = 'form-status';
+        formStatus.textContent = '';
+    }, 5000);
 
     // In production, you would send this to your email service provider:
     // fetch('/api/subscribe', {
     //     method: 'POST',
     //     headers: { 'Content-Type': 'application/json' },
     //     body: JSON.stringify({ email })
+    // })
+    // .then(response => response.json())
+    // .then(data => {
+    //     formStatus.textContent = 'Thank you for subscribing!';
+    //     formStatus.className = 'form-status success';
+    // })
+    // .catch(error => {
+    //     formStatus.textContent = 'Oops! Something went wrong. Please try again.';
+    //     formStatus.className = 'form-status error';
     // });
 });
 

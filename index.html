@@ -3,157 +3,266 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Anthony Pompliano - Entrepreneur, Investor, Bitcoiner. Subscribe to The Pomp Letter and listen to The Pomp Podcast.">
-    <title>Anthony Pompliano - Entrepreneur, Investor, Bitcoiner</title>
-    <link rel="stylesheet" href="styles.css">
+
+    <!-- Primary Meta Tags -->
+    <meta name="description" content="Anthony Pompliano - Entrepreneur, Investor, and Bitcoiner. Founder of Professional Capital Management with 200+ investments. Read The Pomp Letter (260K+ subscribers) and listen to The Pomp Podcast (50M+ downloads).">
+    <meta name="keywords" content="Anthony Pompliano, Pomp, Bitcoin, Investment, Podcast, Newsletter, Professional Capital Management, Entrepreneur, Finance">
+    <meta name="author" content="Anthony Pompliano">
+    <title>Anthony Pompliano - Entrepreneur, Investor, Bitcoiner | The Pomp Letter</title>
+
+    <!-- Open Graph / Facebook Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.anthonypompliano.com/">
+    <meta property="og:title" content="Anthony Pompliano - Entrepreneur, Investor, Bitcoiner">
+    <meta property="og:description" content="Founder of Professional Capital Management with 200+ investments. Subscribe to The Pomp Letter (260K+ subscribers) and listen to The Pomp Podcast (50M+ downloads).">
+    <meta property="og:image" content="https://www.anthonypompliano.com/pomp-portrait.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Anthony Pompliano">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@APompliano">
+    <meta name="twitter:creator" content="@APompliano">
+    <meta name="twitter:title" content="Anthony Pompliano - Entrepreneur, Investor, Bitcoiner">
+    <meta name="twitter:description" content="Founder of Professional Capital Management. 260K+ newsletter subscribers, 50M+ podcast downloads. Follow for insights on business, finance, and Bitcoin.">
+    <meta name="twitter:image" content="https://www.anthonypompliano.com/pomp-portrait.png">
+
+    <!-- Additional SEO Meta Tags -->
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <link rel="canonical" href="https://www.anthonypompliano.com/">
+
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="hero-bg.webp" as="image" type="image/webp">
+    <link rel="preload" href="pomp-portrait.webp" as="image" type="image/webp">
+    <link rel="preload" href="styles.css" as="style">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" as="style">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Anthony Pompliano",
+      "alternateName": "Pomp",
+      "url": "https://www.anthonypompliano.com",
+      "image": "https://www.anthonypompliano.com/pomp-portrait.png",
+      "sameAs": [
+        "https://twitter.com/APompliano",
+        "https://www.youtube.com/@AnthonyPompliano",
+        "https://www.linkedin.com/in/anthonypompliano",
+        "https://www.instagram.com/apompliano"
+      ],
+      "jobTitle": "Founder & CEO",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Professional Capital Management"
+      },
+      "description": "Entrepreneur, investor, and founder of Professional Capital Management. Host of The Pomp Podcast with 50M+ downloads and author of The Pomp Letter newsletter with 260K+ subscribers.",
+      "knowsAbout": ["Bitcoin", "Investment", "Finance", "Technology", "Business", "Entrepreneurship"]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "PodcastSeries",
+      "name": "The Pomp Podcast",
+      "description": "Conversations with the most interesting people in business, finance, and Bitcoin. Featuring industry leaders, cultural icons, and success stories.",
+      "url": "https://www.anthonypompliano.com/#podcast",
+      "author": {
+        "@type": "Person",
+        "name": "Anthony Pompliano"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Anthony Pompliano"
+      }
+    }
+    </script>
 </head>
 <body>
+    <!-- Skip to Main Content Link for Accessibility -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
     <!-- Navigation -->
-    <nav class="nav" id="nav">
+    <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
-            <a href="#hero" class="nav-logo">ANTHONY POMPLIANO</a>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
+            <a href="#hero" class="nav-logo" aria-label="Anthony Pompliano - Home">ANTHONY POMPLIANO</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
             </button>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#podcast" class="nav-link">Podcast</a></li>
-                <li><a href="#newsletter" class="nav-link">Newsletter</a></li>
-                <li><a href="#from-the-desk" class="nav-link">From the Desk</a></li>
-                <li><a href="#investments" class="nav-link">Investments</a></li>
-                <li><a href="#book" class="nav-link">Book</a></li>
-                <li><a href="#newsletter" class="nav-cta">Subscribe</a></li>
+            <ul class="nav-menu" id="navMenu" role="menubar">
+                <li role="none"><a href="#shows" class="nav-link" role="menuitem">Shows</a></li>
+                <li role="none"><a href="#newsletter" class="nav-link" role="menuitem">Newsletter</a></li>
+                <li role="none"><a href="#investments" class="nav-link" role="menuitem">Investments</a></li>
+                <li role="none"><a href="#book" class="nav-link" role="menuitem">Book</a></li>
+                <li role="none"><a href="#newsletter" class="nav-cta" role="menuitem">Subscribe</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="hero">
-        <div class="hero-background-image">
-            <!-- Placeholder for professional photo background -->
-            <div class="hero-background-placeholder"></div>
-        </div>
-        <div class="hero-overlay"></div>
-        <div class="hero-container">
-            <h1 class="hero-title">ANTHONY POMPLIANO</h1>
-            <p class="hero-subtitle">Founder & CEO of Professional Capital Management</p>
-
-            <p class="hero-value-prop">
-                An entrepreneur and investor who has consistently<br/>
-                found asymmetric opportunities throughout his career.
-            </p>
-
-            <div class="hero-ctas">
-                <a href="#newsletter" class="btn btn-primary">Subscribe to Newsletter</a>
-                <a href="#podcast" class="btn btn-secondary">Listen to Podcast</a>
+    <main id="main-content">
+        <section class="hero" id="hero" aria-label="Introduction">
+            <div class="hero-background-image" role="img" aria-label="Starry background with professional portrait">
+                <!-- Responsive Hero Background -->
+                <picture class="hero-background-picture">
+                    <source
+                        srcset="hero-bg.webp"
+                        type="image/webp"
+                        media="(min-width: 1024px)">
+                    <source
+                        srcset="hero-bg.webp"
+                        type="image/webp"
+                        media="(min-width: 768px)">
+                    <source
+                        srcset="hero-bg.webp"
+                        type="image/webp">
+                    <img
+                        src="hero-bg.png"
+                        alt=""
+                        class="hero-background-img"
+                        loading="eager"
+                        decoding="async">
+                </picture>
+                <!-- Portrait layer will be handled via CSS -->
             </div>
+            <div class="hero-overlay" aria-hidden="true"></div>
+            <div class="hero-container">
+                <h1 class="hero-title">
+                    <span class="hero-title-line">Investor.</span>
+                    <span class="hero-title-line">Entrepreneur.</span>
+                    <span class="hero-title-line">Lifelong learner.</span>
+                </h1>
 
-            <div class="social-proof">
-                <div class="social-proof-item">
-                    <span class="social-proof-text">260K+ Newsletter Subscribers</span>
+                <div class="hero-ctas">
+                    <a href="#book" class="btn btn-primary" aria-label="View my book">My book</a>
+                    <a href="#shows" class="btn btn-secondary" aria-label="Get started">Get started</a>
                 </div>
-                <div class="social-proof-divider">|</div>
-                <div class="social-proof-item">
-                    <span class="social-proof-text">50M+ Podcast Downloads</span>
-                </div>
-                <div class="social-proof-divider">|</div>
-                <div class="social-proof-item">
-                    <span class="social-proof-text">Best-Selling Author</span>
-                </div>
+            </div>
+        </section>
+
+    <!-- Companies Section -->
+    <section class="investments" id="investments">
+        <div class="section-container">
+            <div class="investment-grid">
+                <a href="#" class="investment-card">
+                    <h3 class="investment-card-title">Professional Capital Management</h3>
+                    <p class="investment-card-description">Investment firm and media platform led by Anthony Pompliano focused on Bitcoin, business, and macro markets.</p>
+                </a>
+
+                <a href="#" class="investment-card">
+                    <h3 class="investment-card-title">ProCap Financial</h3>
+                    <p class="investment-card-description">ProCap Financial is a bitcoin-native financial services firm focused on building and funding companies that solve important problems.</p>
+                </a>
+
+                <a href="#" class="investment-card">
+                    <h3 class="investment-card-title">Pomp Investments</h3>
+                    <p class="investment-card-description">Anthony Pompliano's investment vehicle backing early-stage companies and Bitcoin-related opportunities.</p>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Podcast Section -->
-    <section class="podcast" id="podcast">
+    <!-- Shows Section -->
+    <section class="shows" id="shows">
         <div class="section-container">
-            <h2 class="section-title">THE POMP PODCAST</h2>
-
-            <div class="podcast-content">
-                <div class="podcast-left">
-                    <div class="podcast-artwork">
-                        <div class="artwork-placeholder">Podcast Artwork</div>
-                    </div>
-                    <div class="podcast-description">
-                        <p>"Conversations with the most interesting people in business, finance, and Bitcoin."</p>
-                        <ul class="podcast-topics">
-                            <li>Industry Leaders</li>
-                            <li>Cultural Icons</li>
-                            <li>Success Stories</li>
-                            <li>Billionaires, CEOs & Investors</li>
-                        </ul>
-                    </div>
+            <!-- From the Desk - Image Left -->
+            <div class="show-item">
+                <div class="show-image">
+                    <picture>
+                        <source srcset="from-the-desk-logo.webp" type="image/webp">
+                        <img src="from the desk logo.jpeg" alt="From the Desk" class="show-img" loading="lazy">
+                    </picture>
                 </div>
 
-                <div class="podcast-right">
-                    <div class="podcast-stats">
-                        <div class="stat-large">50M+ Downloads</div>
-                        <div class="stat-subtitle">Top Business & Finance Podcast</div>
-                    </div>
+                <div class="show-content">
+                    <h3 class="show-title">From the Desk of Pomp</h3>
+                    <p class="show-description">
+                        Five days a week, entrepreneur and investor Anthony Pompliano breaks down the biggest headlines in finance, tech, and politics.
+                    </p>
 
-                    <div class="podcast-guests">
-                        <h3>Featured Guests:</h3>
-                        <div class="guest-grid">
-                            <div class="guest-item">
-                                <div class="guest-photo">MC</div>
-                                <span>Mark Cuban</span>
-                            </div>
-                            <div class="guest-item">
-                                <div class="guest-photo">KO</div>
-                                <span>Kevin O'Leary</span>
-                            </div>
-                            <div class="guest-item">
-                                <div class="guest-photo">RP</div>
-                                <span>Raoul Pal</span>
-                            </div>
-                            <div class="guest-item">
-                                <div class="guest-photo">LA</div>
-                                <span>Lyn Alden</span>
-                            </div>
-                            <div class="guest-item">
-                                <div class="guest-photo">MB</div>
-                                <span>Michael Burry</span>
-                            </div>
-                            <div class="guest-item">
-                                <div class="guest-photo">CS</div>
-                                <span>Chamath</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <a href="#" class="btn btn-primary">Listen Now</a>
-
-                    <div class="podcast-platforms">
-                        <span>Available on:</span>
-                        <div class="platform-icons">
-                            <a href="#" class="platform-link" aria-label="Spotify">Spotify</a>
-                            <a href="#" class="platform-link" aria-label="Apple Podcasts">Apple</a>
-                            <a href="#" class="platform-link" aria-label="YouTube">YouTube</a>
-                        </div>
+                    <div class="show-platforms">
+                        <a href="#" class="platform-button" aria-label="Listen on Apple Podcasts">
+                            <span class="platform-icon">
+                                <img src="apple-podcasts-logo.webp" alt="Apple Podcasts" class="platform-logo">
+                            </span>
+                            <span class="platform-text">
+                                <span class="platform-name">Apple Podcasts</span>
+                            </span>
+                        </a>
+                        <a href="#" class="platform-button" aria-label="Listen on Spotify">
+                            <span class="platform-icon">
+                                <img src="spotify-logo.webp" alt="Spotify" class="platform-logo">
+                            </span>
+                            <span class="platform-text">
+                                <span class="platform-name">Spotify</span>
+                            </span>
+                        </a>
+                        <a href="#" class="platform-button" aria-label="Watch and Listen on YouTube">
+                            <span class="platform-icon">
+                                <img src="youtube-logo.webp" alt="YouTube" class="platform-logo">
+                            </span>
+                            <span class="platform-text">
+                                <span class="platform-name">YouTube</span>
+                            </span>
+                        </a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- From the Desk Section -->
-    <section class="from-the-desk" id="from-the-desk">
-        <div class="section-container">
-            <h2 class="section-title">FROM THE DESK OF ANTHONY POMPLIANO</h2>
-
-            <div class="desk-content">
-                <div class="desk-preview">
-                    <div class="preview-placeholder">Content Preview Image</div>
+            <!-- The Pomp Podcast - Image Right -->
+            <div class="show-item show-item-reverse">
+                <div class="show-image">
+                    <picture>
+                        <source srcset="pomp-podcast-logo.webp" type="image/webp">
+                        <img src="Pomp Podcast Logo.jpg" alt="The Pomp Podcast cover art" class="show-img" loading="lazy">
+                    </picture>
                 </div>
 
-                <div class="desk-description">
-                    <p class="desk-intro">Long-form analysis and deep dives into markets, technology, and culture.</p>
-                    <p class="desk-tagline">Premium content that goes beyond the daily newsletter with in-depth research and unique perspectives.</p>
-                    <a href="#" class="btn btn-primary">Read Latest →</a>
+                <div class="show-content">
+                    <h3 class="show-title">The Pomp Podcast</h3>
+                    <p class="show-description">
+                        Flagship interview series featuring 3-5 weekly episodes with influential business leaders and investors discussing Bitcoin, business, and macro trends.
+                    </p>
+
+                    <div class="show-platforms">
+                        <a href="#" class="platform-button" aria-label="Listen on Apple Podcasts">
+                            <span class="platform-icon">
+                                <img src="apple-podcasts-logo.webp" alt="Apple Podcasts" class="platform-logo">
+                            </span>
+                            <span class="platform-text">
+                                <span class="platform-name">Apple Podcasts</span>
+                            </span>
+                        </a>
+                        <a href="#" class="platform-button" aria-label="Listen on Spotify">
+                            <span class="platform-icon">
+                                <img src="spotify-logo.webp" alt="Spotify" class="platform-logo">
+                            </span>
+                            <span class="platform-text">
+                                <span class="platform-name">Spotify</span>
+                            </span>
+                        </a>
+                        <a href="#" class="platform-button" aria-label="Watch and Listen on YouTube">
+                            <span class="platform-icon">
+                                <img src="youtube-logo.webp" alt="YouTube" class="platform-logo">
+                            </span>
+                            <span class="platform-text">
+                                <span class="platform-name">YouTube</span>
+                            </span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -162,73 +271,34 @@
     <!-- Newsletter Section -->
     <section class="newsletter" id="newsletter">
         <div class="section-container">
-            <h2 class="section-title">THE POMP LETTER</h2>
+            <h2 class="section-title">The Pomp Letter</h2>
 
             <p class="newsletter-intro">
-                Daily insights on business, tech, finance, and Bitcoin<br/>
-                delivered to 260,000+ investors, founders, VCs, and industry leaders every morning.
+                Daily newsletter breaking down Bitcoin, business, and macro trends before they hit mainstream media.
             </p>
 
-            <form class="newsletter-form" id="newsletterForm">
+            <form class="newsletter-form" id="newsletterForm" aria-label="Newsletter subscription form">
+                <label for="newsletter-email" class="visually-hidden">Email address for newsletter subscription</label>
                 <input
                     type="email"
+                    id="newsletter-email"
+                    name="email"
                     class="newsletter-input"
                     placeholder="Enter your email address"
                     aria-label="Email address"
+                    aria-required="true"
+                    aria-describedby="newsletter-intro"
                     required
+                    autocomplete="email"
                 />
-                <button type="submit" class="btn btn-primary">Subscribe</button>
+                <button type="submit" class="btn btn-primary" aria-label="Subscribe to newsletter">Subscribe</button>
+                <div id="form-status" class="form-status" role="status" aria-live="polite" aria-atomic="true"></div>
             </form>
 
             <blockquote class="newsletter-testimonial">
                 <p>"The best way to start your day. Essential reading for anyone interested in markets, technology, and the future of finance."</p>
                 <cite>— Subscriber Feedback</cite>
             </blockquote>
-
-            <div class="newsletter-archive">
-                <h3>Recent Headlines:</h3>
-                <ul class="archive-list">
-                    <li>
-                        <a href="#">Why Bitcoin Will Hit $1M by 2030</a>
-                        <span class="archive-date">Oct 12, 2025</span>
-                    </li>
-                    <li>
-                        <a href="#">The Fed's Next Move: What Investors Need to Know</a>
-                        <span class="archive-date">Oct 11, 2025</span>
-                    </li>
-                    <li>
-                        <a href="#">Tech Earnings: Winners and Losers</a>
-                        <span class="archive-date">Oct 10, 2025</span>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- ProCap Financial Section -->
-    <section class="investments" id="investments">
-        <div class="section-container">
-            <h2 class="section-title">INVESTMENTS & VENTURES</h2>
-
-            <div class="investment-grid">
-                <a href="#" class="investment-card">
-                    <span class="investment-card-number">01</span>
-                    <h3 class="investment-card-title">PROFESSIONAL CAPITAL MANAGEMENT</h3>
-                    <p class="investment-card-description">Founder & CEO - Leading investment firm focused on asymmetric opportunities and long-term value creation</p>
-                </a>
-
-                <a href="#" class="investment-card">
-                    <span class="investment-card-number">02</span>
-                    <h3 class="investment-card-title">VENTURE PORTFOLIO</h3>
-                    <p class="investment-card-description">~200 investments across technology, Bitcoin infrastructure, and innovative companies including Coinbase, SpaceX, Reddit, and more</p>
-                </a>
-
-                <a href="#" class="investment-card">
-                    <span class="investment-card-number">03</span>
-                    <h3 class="investment-card-title">MEDIA PLATFORM</h3>
-                    <p class="investment-card-description">Built one of the largest independent financial media platforms with 260K+ newsletter subscribers and 50M+ podcast downloads</p>
-                </a>
-            </div>
         </div>
     </section>
 
@@ -237,32 +307,19 @@
         <div class="section-container">
             <div class="book-content">
                 <div class="book-cover">
-                    <div class="book-cover-placeholder">
-                        <div class="book-cover-text">
-                            HOW TO LIVE AN<br/>
-                            EXTRAORDINARY<br/>
-                            LIFE
-                        </div>
-                    </div>
+                    <picture>
+                        <source srcset="book-cover-black.webp" type="image/webp">
+                        <img src="book2.jpg" alt="How to Live an Extraordinary Life book cover by Anthony Pompliano" class="book-cover-img" loading="lazy">
+                    </picture>
                 </div>
 
                 <div class="book-details">
-                    <h2 class="book-title">HOW TO LIVE AN EXTRAORDINARY LIFE</h2>
-                    <p class="book-badge">Wall Street Journal Best-Seller</p>
-
+                    <p class="book-badge">#1 NEW YORK TIMES BESTSELLER</p>
+                    <h2 class="book-title">How To Live An Extraordinary Life</h2>
                     <p class="book-description">
-                        "65 letters to my children about life, business, and personal relationships. Lessons learned from building businesses, investing, and finding success on my own terms."
+                        65 letters to my children about life, business, and personal relationships. Lessons learned from building businesses, investing, and finding success on my own terms.
                     </p>
-
-                    <div class="book-stats">
-                        <span class="book-stat">⭐ Wall Street Journal Best-Seller</span>
-                        <span class="book-stat">📚 Available on Amazon & Barnes & Noble</span>
-                    </div>
-
-                    <div class="book-ctas">
-                        <a href="#" class="btn btn-primary">Buy Now</a>
-                        <a href="#" class="btn btn-secondary">Read Sample</a>
-                    </div>
+                    <a href="#" class="book-button">Buy now</a>
                 </div>
             </div>
         </div>
@@ -271,38 +328,42 @@
     <!-- Social Media Section -->
     <section class="social" id="social">
         <div class="section-container">
-            <h2 class="section-title">FOLLOW THE CONVERSATION</h2>
+            <h2 class="section-title">Follow the conversation</h2>
 
             <div class="social-grid">
                 <a href="#" class="social-card social-card-twitter">
-                    <div class="social-icon">𝕏</div>
-                    <h3>Twitter/X</h3>
+                    <div class="social-icon">
+                        <img src="x-logo.webp" alt="X" class="social-logo">
+                    </div>
+                    <h3>X</h3>
                     <p class="social-handle">@APompliano</p>
-                    <p class="social-count">1.9M Followers</p>
                     <span class="social-cta">Follow</span>
                 </a>
 
                 <a href="#" class="social-card">
-                    <div class="social-icon">▶️</div>
+                    <div class="social-icon">
+                        <img src="youtube-logo.webp" alt="YouTube" class="social-logo">
+                    </div>
                     <h3>YouTube</h3>
                     <p class="social-handle">@AnthonyPompliano</p>
-                    <p class="social-count">560K+ Subscribers</p>
                     <span class="social-cta">Subscribe</span>
                 </a>
 
                 <a href="#" class="social-card">
-                    <div class="social-icon">in</div>
+                    <div class="social-icon">
+                        <img src="linkedin-logo.webp" alt="LinkedIn" class="social-logo">
+                    </div>
                     <h3>LinkedIn</h3>
                     <p class="social-handle">Anthony Pompliano</p>
-                    <p class="social-count">1M+ Followers</p>
                     <span class="social-cta">Connect</span>
                 </a>
 
                 <a href="#" class="social-card">
-                    <div class="social-icon">📷</div>
+                    <div class="social-icon">
+                        <img src="ig-logo.webp" alt="Instagram" class="social-logo">
+                    </div>
                     <h3>Instagram</h3>
                     <p class="social-handle">@APompliano</p>
-                    <p class="social-count">400K+ Followers</p>
                     <span class="social-cta">Follow</span>
                 </a>
             </div>
@@ -313,16 +374,18 @@
         </div>
     </section>
 
+    </main>
+
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="footer-container">
             <p class="footer-copyright">© 2025 Anthony Pompliano. All rights reserved.</p>
-            <div class="footer-links">
+            <nav class="footer-links" aria-label="Footer navigation">
                 <a href="#hero">Home</a>
-                <a href="#podcast">Podcast</a>
+                <a href="#shows">Shows</a>
                 <a href="#newsletter">Newsletter</a>
                 <a href="#book">Book</a>
-            </div>
+            </nav>
         </div>
     </footer>
 
