@@ -1181,6 +1181,8 @@ section {
     .hero-title {
         font-size: 28px; /* Increased from 20px for better visual hierarchy */
         margin-bottom: var(--spacing-md); /* Increased to 24px for balanced spacing between title and buttons */
+        animation: none; /* Disable fadeInUp animation on mobile to prevent scroll interference */
+        opacity: 1; /* Ensure immediately visible */
     }
 
     .nav-toggle {
@@ -1238,6 +1240,8 @@ section {
     .hero-value-prop {
         max-width: 100%;
         margin-bottom: var(--spacing-sm); /* Further reduced from 24px to 16px */
+        animation: none; /* Disable fadeInUp animation on mobile to prevent scroll interference */
+        opacity: 1; /* Ensure immediately visible */
     }
 
     .hero-background-image::after {
@@ -1260,6 +1264,8 @@ section {
         justify-content: center;
         width: 100%;
         gap: 6px; /* Further reduced from 8px for ultra-compact layout */
+        animation: none; /* Disable fadeInUp animation on mobile to prevent scroll interference */
+        opacity: 1; /* Ensure immediately visible */
     }
 
     .btn {

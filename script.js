@@ -94,6 +94,10 @@ const observer = new IntersectionObserver((entries) => {
 
 // Observe sections for fade-in animation
 document.querySelectorAll('section').forEach(section => {
+    // Skip hero section - it should be immediately visible without scroll-triggered animation
+    if (section.classList.contains('hero')) {
+        return;
+    }
     section.style.opacity = '0';
     section.style.transform = 'translateY(30px)';
     section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
