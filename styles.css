@@ -1118,7 +1118,7 @@ section {
 
     .hero-title {
         font-size: 28px; /* Increased from 20px for better visual hierarchy */
-        margin-bottom: var(--spacing-xs); /* Further reduced from 16px to 8px */
+        margin-bottom: var(--spacing-md); /* Increased to 24px for balanced spacing between title and buttons */
     }
 
     .nav-toggle {
@@ -1166,7 +1166,7 @@ section {
         align-items: center;
         padding-left: var(--spacing-md);
         padding-right: var(--spacing-md);
-        padding-top: 340px; /* Further reduced from 380px for ultra-compact layout */
+        padding-top: 280px; /* Reduced to pull text closer to portrait */
     }
 
     .hero-value-prop {
