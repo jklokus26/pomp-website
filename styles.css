@@ -1139,14 +1139,15 @@ section {
     /* Hero Section - Mobile Optimizations */
     .hero-portrait {
         /* Reposition portrait on mobile - smaller and top-right corner */
-        width: 100px;
-        height: 100px;
-        top: 80px;
-        right: 20px;
+        width: 120px;
+        height: 120px;
+        top: 100px;
+        right: 16px;
         background-size: cover;
-        background-position: top center;
-        opacity: 0.3;
+        background-position: center center;
+        opacity: 0.9; /* Increased from 0.3 for full visibility */
         animation: none; /* Disable animation on mobile */
+        border-radius: 8px; /* Add subtle rounding */
     }
 
     .hero-background-img {
