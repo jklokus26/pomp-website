@@ -1176,6 +1176,8 @@ section {
     .hero {
         padding-top: var(--spacing-md); /* Reduced from 64px to 24px for ultra-compact layout */
         margin-top: 60px;
+        min-height: auto; /* Remove 100vh on mobile to prevent layout shifts from URL bar */
+        height: auto; /* Allow content to determine height */
     }
 
     .hero-title {
@@ -1220,6 +1222,7 @@ section {
         will-change: auto; /* Disable will-change for smoother scroll performance */
         animation: none; /* Disable animation on mobile for stable scrolling */
         border-radius: 12px; /* Larger rounding to match size */
+        transform: translateZ(0); /* Force GPU acceleration and prevent layout shifts */
     }
 
     .hero-background-img {
@@ -1235,6 +1238,8 @@ section {
         padding-left: var(--spacing-md);
         padding-right: var(--spacing-md);
         padding-top: 280px; /* Reduced to pull text closer to portrait */
+        padding-bottom: var(--spacing-xxl); /* Add explicit bottom padding for spacing */
+        transform: translateZ(0); /* Force GPU layer to prevent layout shifts */
     }
 
     .hero-value-prop {
