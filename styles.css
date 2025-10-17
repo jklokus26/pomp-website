@@ -1209,8 +1209,9 @@ section {
         width: 240px;
         height: 240px;
         top: 90px; /* Moved closer to nav from 140px */
-        right: 50%;
-        transform: translateX(50%); /* Center horizontally on screen */
+        left: 50%; /* Center horizontally */
+        margin-left: -120px; /* Offset by half width to truly center */
+        right: auto; /* Override desktop right positioning */
         background-size: cover;
         background-position: center center;
         opacity: 0.85; /* Slightly reduced for better text legibility */
