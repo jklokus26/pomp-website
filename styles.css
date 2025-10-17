@@ -1212,13 +1212,16 @@ section {
         width: 240px;
         height: 240px;
         top: 90px; /* Moved closer to nav from 140px */
-        right: 50%;
-        transform: translateX(50%); /* Center horizontally on screen */
+        left: 50%; /* Center horizontally */
+        margin-left: -120px; /* Offset by half width to truly center */
+        right: auto; /* Override desktop right positioning */
         background-size: cover;
         background-position: center center;
         opacity: 0.85; /* Slightly reduced for better text legibility */
+        will-change: auto; /* Disable will-change for smoother scroll performance */
         animation: none; /* Disable animation on mobile for stable scrolling */
         border-radius: 12px; /* Larger rounding to match size */
+        transform: translateZ(0); /* Force GPU acceleration and prevent layout shifts */
     }
 
     .hero-background-img {
@@ -1233,7 +1236,7 @@ section {
         align-items: center;
         padding-left: var(--spacing-md);
         padding-right: var(--spacing-md);
-        padding-top: 280px; /* Reduced to pull text closer to portrait */
+        padding-top: 360px; /* Increased to prevent overlap with centered portrait */
         padding-bottom: var(--spacing-xxl); /* Add explicit bottom padding for spacing */
         transform: translateZ(0); /* Force GPU layer to prevent layout shifts */
     }
