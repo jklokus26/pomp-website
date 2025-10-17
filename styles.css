@@ -1064,6 +1064,10 @@ section {
         font-size: var(--font-size-3xl);
     }
 
+    .section-title {
+        font-size: var(--font-size-3xl);
+    }
+
     .book-content {
         grid-template-columns: 1fr;
         gap: var(--spacing-xxl);
