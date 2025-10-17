@@ -1138,16 +1138,17 @@ section {
 
     /* Hero Section - Mobile Optimizations */
     .hero-portrait {
-        /* Reposition portrait on mobile - smaller and top-right corner */
-        width: 120px;
-        height: 120px;
-        top: 100px;
-        right: 16px;
+        /* Larger portrait on mobile - prominent in upper area */
+        width: 240px;
+        height: 240px;
+        top: 140px;
+        right: 50%;
+        transform: translateX(50%); /* Center horizontally on screen */
         background-size: cover;
         background-position: center center;
-        opacity: 0.9; /* Increased from 0.3 for full visibility */
+        opacity: 0.85; /* Slightly reduced for better text legibility */
         animation: none; /* Disable animation on mobile */
-        border-radius: 8px; /* Add subtle rounding */
+        border-radius: 12px; /* Larger rounding to match size */
     }
 
     .hero-background-img {
@@ -1160,7 +1161,7 @@ section {
         align-items: center;
         padding-left: var(--spacing-md);
         padding-right: var(--spacing-md);
-        padding-top: var(--spacing-xxl); /* Add top padding to accommodate small portrait */
+        padding-top: 400px; /* Large top padding to position text below portrait */
     }
 
     .hero-value-prop {
