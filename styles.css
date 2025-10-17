@@ -1112,7 +1112,8 @@ section {
     }
 
     .hero-title {
-        font-size: var(--font-size-xl);
+        font-size: 28px; /* Increased from 20px for better visual hierarchy */
+        margin-bottom: var(--spacing-lg);
     }
 
     .nav-toggle {
@@ -1137,7 +1138,15 @@ section {
 
     /* Hero Section - Mobile Optimizations */
     .hero-portrait {
-        display: none; /* Hide portrait on mobile to prevent overlap */
+        /* Reposition portrait on mobile - smaller and top-right corner */
+        width: 100px;
+        height: 100px;
+        top: 80px;
+        right: 20px;
+        background-size: cover;
+        background-position: top center;
+        opacity: 0.3;
+        animation: none; /* Disable animation on mobile */
     }
 
     .hero-background-img {
@@ -1150,6 +1159,7 @@ section {
         align-items: center;
         padding-left: var(--spacing-md);
         padding-right: var(--spacing-md);
+        padding-top: var(--spacing-xxl); /* Add top padding to accommodate small portrait */
     }
 
     .hero-value-prop {
