@@ -1111,9 +1111,14 @@ section {
         padding-block: 48px;
     }
 
+    .hero {
+        padding-top: var(--spacing-md); /* Reduced from 64px to 24px for ultra-compact layout */
+        margin-top: 60px;
+    }
+
     .hero-title {
         font-size: 28px; /* Increased from 20px for better visual hierarchy */
-        margin-bottom: var(--spacing-sm); /* Reduced from 32px to 16px for compact layout */
+        margin-bottom: var(--spacing-xs); /* Further reduced from 16px to 8px */
     }
 
     .nav-toggle {
@@ -1141,7 +1146,7 @@ section {
         /* Larger portrait on mobile - prominent in upper area */
         width: 240px;
         height: 240px;
-        top: 140px;
+        top: 90px; /* Moved closer to nav from 140px */
         right: 50%;
         transform: translateX(50%); /* Center horizontally on screen */
         background-size: cover;
@@ -1161,12 +1166,12 @@ section {
         align-items: center;
         padding-left: var(--spacing-md);
         padding-right: var(--spacing-md);
-        padding-top: 380px; /* Reduced from 400px for tighter layout */
+        padding-top: 340px; /* Further reduced from 380px for ultra-compact layout */
     }
 
     .hero-value-prop {
         max-width: 100%;
-        margin-bottom: var(--spacing-md); /* Reduced spacing below value prop if present */
+        margin-bottom: var(--spacing-sm); /* Further reduced from 24px to 16px */
     }
 
     .hero-background-image::after {
@@ -1188,7 +1193,7 @@ section {
         flex-direction: column;
         justify-content: center;
         width: 100%;
-        gap: var(--spacing-xs); /* Reduced from 16px to 8px for compact layout */
+        gap: 6px; /* Further reduced from 8px for ultra-compact layout */
     }
 
     .btn {
