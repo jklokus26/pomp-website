@@ -1176,8 +1176,7 @@ section {
     .hero {
         padding-top: var(--spacing-md); /* Reduced from 64px to 24px for ultra-compact layout */
         margin-top: 60px;
-        min-height: auto; /* Remove 100vh on mobile to prevent layout shifts from URL bar */
-        height: auto; /* Allow content to determine height */
+        min-height: 700px; /* Fixed height instead of 100vh to prevent layout shifts from URL bar showing/hiding */
     }
 
     .hero-title {
