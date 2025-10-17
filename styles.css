@@ -1141,8 +1141,8 @@ section {
     }
 
     .hero-background-img {
-        opacity: 0.6; /* Increase star pattern visibility */
-        filter: brightness(1.2);
+        opacity: 1; /* Make stars fully visible */
+        filter: brightness(1.8) contrast(1.2); /* Dramatically increase star visibility */
     }
 
     .hero-container {
@@ -1165,9 +1165,9 @@ section {
     .hero-overlay {
         background: linear-gradient(
             180deg,
-            rgba(10, 22, 40, 0.75) 0%,
-            rgba(10, 22, 40, 0.85) 60%,
-            rgba(10, 22, 40, 0.92) 100%
+            rgba(10, 22, 40, 0.5) 0%,
+            rgba(10, 22, 40, 0.65) 50%,
+            rgba(10, 22, 40, 0.75) 100%
         );
     }
 
