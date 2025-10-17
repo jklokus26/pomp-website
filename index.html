@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Primary Meta Tags -->
-    <meta name="description" content="Anthony Pompliano - Entrepreneur, Investor, and Bitcoiner. Founder of Professional Capital Management with 200+ investments. Read The Pomp Letter (260K+ subscribers) and listen to The Pomp Podcast (50M+ downloads).">
+    <meta name="description" content="Anthony Pompliano - Entrepreneur, Investor, and Bitcoiner. Founder of Professional Capital Management with 200+ investments. Read The Pomp Letter (270K+ subscribers) and listen to The Pomp Podcast (50M+ downloads).">
     <meta name="keywords" content="Anthony Pompliano, Pomp, Bitcoin, Investment, Podcast, Newsletter, Professional Capital Management, Entrepreneur, Finance">
     <meta name="author" content="Anthony Pompliano">
     <title>Anthony Pompliano - Entrepreneur, Investor, Bitcoiner | The Pomp Letter</title>
@@ -14,7 +14,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.anthonypompliano.com/">
     <meta property="og:title" content="Anthony Pompliano - Entrepreneur, Investor, Bitcoiner">
-    <meta property="og:description" content="Founder of Professional Capital Management with 200+ investments. Subscribe to The Pomp Letter (260K+ subscribers) and listen to The Pomp Podcast (50M+ downloads).">
+    <meta property="og:description" content="Founder of Professional Capital Management with 200+ investments. Subscribe to The Pomp Letter (270K+ subscribers) and listen to The Pomp Podcast (50M+ downloads).">
     <meta property="og:image" content="https://www.anthonypompliano.com/assets/images/pomp-portrait.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -26,7 +26,7 @@
     <meta name="twitter:site" content="@APompliano">
     <meta name="twitter:creator" content="@APompliano">
     <meta name="twitter:title" content="Anthony Pompliano - Entrepreneur, Investor, Bitcoiner">
-    <meta name="twitter:description" content="Founder of Professional Capital Management. 260K+ newsletter subscribers, 50M+ podcast downloads. Follow for insights on business, finance, and Bitcoin.">
+    <meta name="twitter:description" content="Founder of Professional Capital Management. 270K+ newsletter subscribers, 50M+ podcast downloads. Follow for insights on business, finance, and Bitcoin.">
     <meta name="twitter:image" content="https://www.anthonypompliano.com/assets/images/pomp-portrait.png">
 
     <!-- Additional SEO Meta Tags -->
@@ -34,12 +34,20 @@
     <meta name="googlebot" content="index, follow">
     <link rel="canonical" href="https://www.anthonypompliano.com/">
 
-    <!-- Preload Critical Assets -->
-    <link rel="preload" href="assets/images/hero-bg.webp" as="image" type="image/webp">
-    <link rel="preload" href="assets/images/pomp-portrait.webp" as="image" type="image/webp">
-    <link rel="preload" href="styles.css" as="style">
+    <!-- DNS Prefetch for External Domains -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://pomp.substack.com">
+    <link rel="dns-prefetch" href="https://www.amazon.com">
+
+    <!-- Preconnect for Critical External Resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="assets/images/hero-bg.webp" as="image" type="image/webp" fetchpriority="high">
+    <link rel="preload" href="assets/images/pomp-headshot-2.webp" as="image" type="image/webp" fetchpriority="high">
+    <link rel="preload" href="styles.css" as="style">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" as="style">
 
     <!-- Stylesheets -->
@@ -66,7 +74,7 @@
         "@type": "Organization",
         "name": "Professional Capital Management"
       },
-      "description": "Entrepreneur, investor, and founder of Professional Capital Management. Host of The Pomp Podcast with 50M+ downloads and author of The Pomp Letter newsletter with 260K+ subscribers.",
+      "description": "Entrepreneur, investor, and founder of Professional Capital Management. Host of The Pomp Podcast with 50M+ downloads and author of The Pomp Letter newsletter with 270K+ subscribers.",
       "knowsAbout": ["Bitcoin", "Investment", "Finance", "Technology", "Business", "Entrepreneurship"]
     }
     </script>
@@ -134,7 +142,8 @@
                         alt=""
                         class="hero-background-img"
                         loading="eager"
-                        decoding="async">
+                        decoding="async"
+                        fetchpriority="high">
                 </picture>
                 <!-- Portrait layer will be handled via CSS -->
             </div>
@@ -279,7 +288,7 @@
             </p>
 
             <div class="newsletter-embed">
-                <iframe src="https://pomp.substack.com/embed" width="100%" height="150" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
+                <iframe src="https://pomp.substack.com/embed" width="100%" height="150" style="border:1px solid #EEE; background:white;" scrolling="no" title="Subscribe to The Pomp Letter newsletter" loading="lazy"></iframe>
             </div>
 
             <blockquote class="newsletter-testimonial">

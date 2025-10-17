@@ -305,6 +305,9 @@ h3, .h3 {
     height: 100%;
     object-fit: cover;
     object-position: center;
+    transform-origin: center;
+    will-change: transform;
+    animation: bgDrift 30s ease-in-out infinite alternate;
 }
 
 /* Portrait layer - new sibling element for proper stacking */
@@ -321,6 +324,7 @@ h3, .h3 {
     animation: subtleZoom 20s ease-in-out infinite alternate;
     pointer-events: none;
     z-index: 2;
+    will-change: transform;
 }
 
 /* Fallback for browsers that don't support WebP */
@@ -412,6 +416,7 @@ h3, .h3 {
     border: 2px solid transparent;
     cursor: pointer;
     position: relative;
+    will-change: transform;
 }
 
 .btn:focus-visible {
@@ -726,6 +731,8 @@ section {
     border: 1px solid rgba(212, 175, 55, 0.15);
     min-height: 240px;
     box-shadow: 0 4px 12px rgba(10, 22, 40, 0.08);
+    contain: layout style paint;
+    will-change: transform;
 }
 
 .investment-card:hover {
@@ -866,6 +873,8 @@ section {
     align-items: center;
     justify-content: space-between;
     min-height: 240px;
+    contain: layout style paint;
+    will-change: transform;
 }
 
 .social-card:hover {
@@ -996,7 +1005,7 @@ section {
         transform: scale(1);
     }
     to {
-        transform: scale(1.1);
+        transform: scale(1.06);
     }
 }
 
@@ -1006,6 +1015,55 @@ section {
     }
     to {
         transform: rotate(360deg);
+    }
+}
+
+/* Portrait: micro float + micro tilt */
+@keyframes portraitFloat {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-4px) rotate(0.35deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+/* Portrait mobile: gentler motion */
+@keyframes portraitFloatMobile {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-2px) rotate(0.1deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+/* Hero background: diagonal drift + micro-zoom */
+@keyframes bgDrift {
+    0% {
+        transform: scale(1) translate3d(0, 0, 0);
+    }
+    50% {
+        transform: scale(1.05) translate3d(-2.5%, -2%, 0);
+    }
+    100% {
+        transform: scale(1.1) translate3d(-4.5%, 2%, 0);
+    }
+}
+
+/* Mobile variant: even subtler */
+@keyframes bgDriftMobile {
+    0% {
+        transform: scale(1) translate3d(0, 0, 0);
+    }
+    100% {
+        transform: scale(1.06) translate3d(-3%, -2%, 0);
     }
 }
 
@@ -1156,13 +1214,15 @@ section {
         background-size: cover;
         background-position: center center;
         opacity: 0.85; /* Slightly reduced for better text legibility */
-        animation: none; /* Disable animation on mobile */
+        will-change: transform;
+        animation: subtleZoom 24s ease-in-out infinite alternate;
         border-radius: 12px; /* Larger rounding to match size */
     }
 
     .hero-background-img {
         opacity: 1; /* Make stars fully visible */
         filter: brightness(1.8) contrast(1.2); /* Dramatically increase star visibility */
+        animation: bgDriftMobile 40s ease-in-out infinite alternate;
     }
 
     .hero-container {
@@ -1278,5 +1338,13 @@ section {
     .platform-logo {
         width: 28px;
         height: 28px;
+    }
+}
+
+/* ===== Accessibility: Respect Reduced Motion Preference ===== */
+@media (prefers-reduced-motion: reduce) {
+    .hero-portrait,
+    .hero-background-img {
+        animation: none !important;
     }
 }

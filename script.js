@@ -50,7 +50,7 @@ window.addEventListener('scroll', () => {
     }
 
     lastScroll = currentScroll;
-});
+}, { passive: true });
 
 // ===== Smooth Scroll with Offset =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -74,55 +74,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ===== Newsletter Form Handling =====
-const newsletterForm = document.getElementById('newsletterForm');
-
-newsletterForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const emailInput = newsletterForm.querySelector('input[type="email"]');
-    const email = emailInput.value;
-    const formStatus = document.getElementById('form-status');
-
-    // Basic email validation
-    if (!email || !email.includes('@')) {
-        // Show error message for screen readers and users
-        formStatus.textContent = 'Please enter a valid email address.';
-        formStatus.className = 'form-status error';
-        emailInput.setAttribute('aria-invalid', 'true');
-        emailInput.focus();
-        return;
-    }
-
-    // Remove error state
-    emailInput.removeAttribute('aria-invalid');
-
-    // Show success message (in production, this would send to a backend)
-    formStatus.textContent = 'Thank you for subscribing! Welcome to The Pomp Letter.';
-    formStatus.className = 'form-status success';
-    emailInput.value = '';
-
-    // Hide success message after 5 seconds
-    setTimeout(() => {
-        formStatus.className = 'form-status';
-        formStatus.textContent = '';
-    }, 5000);
-
-    // In production, you would send this to your email service provider:
-    // fetch('/api/subscribe', {
-    //     method: 'POST',
-    //     headers: { 'Content-Type': 'application/json' },
-    //     body: JSON.stringify({ email })
-    // })
-    // .then(response => response.json())
-    // .then(data => {
-    //     formStatus.textContent = 'Thank you for subscribing!';
-    //     formStatus.className = 'form-status success';
-    // })
-    // .catch(error => {
-    //     formStatus.textContent = 'Oops! Something went wrong. Please try again.';
-    //     formStatus.className = 'form-status error';
-    // });
-});
+// Note: Newsletter subscription is handled by embedded Substack iframe
+// This section is reserved for future custom form implementation if needed
 
 // ===== Scroll Animations =====
 const observerOptions = {
@@ -169,7 +122,7 @@ function highlightNavigation() {
     });
 }
 
-window.addEventListener('scroll', highlightNavigation);
+window.addEventListener('scroll', highlightNavigation, { passive: true });
 
 // ===== Performance: Lazy Loading Images =====
 // This would be used when actual images are added
@@ -197,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
         hero.style.transform = 'translateY(0)';
     }
 
-    console.log('Anthony Pompliano website loaded successfully!');
+    // Website initialized successfully
 });
 
 // ===== Analytics (Placeholder) =====
