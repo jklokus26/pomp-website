@@ -1215,15 +1215,16 @@ section {
         background-size: cover;
         background-position: center center;
         opacity: 0.85; /* Slightly reduced for better text legibility */
-        will-change: transform;
-        animation: subtleZoom 24s ease-in-out infinite alternate;
+        will-change: auto; /* Disable will-change for smoother scroll performance */
+        animation: none; /* Disable animation on mobile for stable scrolling */
         border-radius: 12px; /* Larger rounding to match size */
     }
 
     .hero-background-img {
         opacity: 1; /* Make stars fully visible */
         filter: brightness(1.8) contrast(1.2); /* Dramatically increase star visibility */
-        animation: bgDriftMobile 40s ease-in-out infinite alternate;
+        animation: none; /* Disable animation on mobile for smooth scrolling */
+        will-change: auto; /* Disable will-change for better scroll performance */
     }
 
     .hero-container {
