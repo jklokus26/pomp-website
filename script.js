@@ -24,6 +24,23 @@ navToggle.addEventListener('click', () => {
     }
 });
 
+// Dropdown functionality for all dropdowns
+const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+const dropdowns = document.querySelectorAll('.dropdown');
+
+dropdownToggles.forEach(toggle => {
+    toggle.addEventListener('click', (e) => {
+        // Only prevent default if not on mobile (where we want normal navigation)
+        if (window.innerWidth > 768) {
+            e.preventDefault();
+        }
+        
+        // Toggle aria-expanded for accessibility
+        const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', !isExpanded);
+    });
+});
+
 // Close mobile menu when clicking a link
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
@@ -34,6 +51,18 @@ navLinks.forEach(link => {
         spans[0].style.transform = 'none';
         spans[1].style.opacity = '1';
         spans[2].style.transform = 'none';
+    });
+});
+
+// Close dropdown when clicking outside
+document.addEventListener('click', (e) => {
+    dropdowns.forEach(dropdown => {
+        if (!dropdown.contains(e.target)) {
+            const toggle = dropdown.querySelector('.dropdown-toggle');
+            if (toggle) {
+                toggle.setAttribute('aria-expanded', 'false');
+            }
+        }
     });
 });
 
@@ -142,6 +171,50 @@ if ('loading' in HTMLImageElement.prototype) {
     document.body.appendChild(script);
 }
 
+// ===== Silvia Modal Popup =====
+const silviaModal = document.getElementById('silviaModal');
+const silviaModalClose = document.getElementById('silviaModalClose');
+const silviaModalOverlay = document.getElementById('silviaModalOverlay');
+
+// Check if user has already seen the modal
+const hasSeenSilviaModal = sessionStorage.getItem('hasSeenSilviaModal');
+
+// Show modal after a delay (3 seconds) if not seen in this session
+function showSilviaModal() {
+    if (!hasSeenSilviaModal && silviaModal) {
+        setTimeout(() => {
+            silviaModal.classList.add('show');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+        }, 7000); // Show after 7 seconds
+    }
+}
+
+// Close modal function
+function closeSilviaModal() {
+    if (silviaModal) {
+        silviaModal.classList.remove('show');
+        document.body.style.overflow = ''; // Re-enable scrolling
+        sessionStorage.setItem('hasSeenSilviaModal', 'true'); // Remember that user has seen it
+    }
+}
+
+// Close modal when clicking the X button
+if (silviaModalClose) {
+    silviaModalClose.addEventListener('click', closeSilviaModal);
+}
+
+// Close modal when clicking the overlay (background)
+if (silviaModalOverlay) {
+    silviaModalOverlay.addEventListener('click', closeSilviaModal);
+}
+
+// Close modal when pressing Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && silviaModal && silviaModal.classList.contains('show')) {
+        closeSilviaModal();
+    }
+});
+
 // ===== Initialize =====
 document.addEventListener('DOMContentLoaded', () => {
     // Set initial state
@@ -153,6 +226,9 @@ document.addEventListener('DOMContentLoaded', () => {
         hero.style.opacity = '1';
         hero.style.transform = 'translateY(0)';
     }
+
+    // Show Silvia modal after delay
+    showSilviaModal();
 
     // Website initialized successfully
 });

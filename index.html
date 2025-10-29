@@ -111,11 +111,38 @@
                 <span aria-hidden="true"></span>
             </button>
             <ul class="nav-menu" id="navMenu" role="menubar">
-                <li role="none"><a href="#investments" class="nav-link" role="menuitem">Companies</a></li>
-                <li role="none"><a href="#shows" class="nav-link" role="menuitem">Shows</a></li>
                 <li role="none"><a href="https://pomp.substack.com/" class="nav-link" role="menuitem" target="_blank" rel="noopener noreferrer">Newsletter</a></li>
+                <li role="none" class="dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false">
+                        Shows <span class="dropdown-arrow">▼</span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li role="none"><a href="https://www.youtube.com/@FromTheDeskOfAnthonyPompliano" class="dropdown-item" role="menuitem" target="_blank" rel="noopener noreferrer">From the Desk of Pomp</a></li>
+                        <li role="none"><a href="https://podcasts.apple.com/us/podcast/the-pomp-podcast/id1434060078" class="dropdown-item" role="menuitem" target="_blank" rel="noopener noreferrer">Pomp Podcast</a></li>
+                    </ul>
+                </li>
+                <li role="none" class="dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false">
+                        Events <span class="dropdown-arrow">▼</span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li role="none"><a href="https://www.bitcoininvestorweek.com/" class="dropdown-item" role="menuitem" target="_blank" rel="noopener noreferrer">Bitcoin Investor Week</a></li>
+                        <li role="none"><a href="https://www.independentinvestor.co/" class="dropdown-item" role="menuitem" target="_blank" rel="noopener noreferrer">Independent Investor Summit</a></li>
+                    </ul>
+                </li>
+                <li role="none"><a href="#investments" class="nav-link" role="menuitem">Companies</a></li>
                 <li role="none"><a href="https://www.amazon.com/Live-Extraordinary-Life-Anthony-Pompliano/dp/0857199927" class="nav-link" role="menuitem" target="_blank" rel="noopener noreferrer">Book</a></li>
-                <li role="none"><a href="#newsletter" class="nav-cta" role="menuitem">Subscribe</a></li>
+                <li role="none" class="nav-social-icons">
+                    <a href="https://x.com/APompliano" class="nav-social-link" aria-label="Follow on X" target="_blank" rel="noopener noreferrer">
+                        <img src="assets/images/x-icon.png" alt="X" class="nav-social-icon" width="20" height="20">
+                    </a>
+                    <a href="https://www.instagram.com/pompglobal/?hl=en" class="nav-social-link" aria-label="Follow on Instagram" target="_blank" rel="noopener noreferrer">
+                        <img src="assets/images/instagram-icon.png" alt="Instagram" class="nav-social-icon" width="20" height="20">
+                    </a>
+                    <a href="https://www.youtube.com/@AnthonyPompliano" class="nav-social-link" aria-label="Subscribe on YouTube" target="_blank" rel="noopener noreferrer">
+                        <img src="assets/images/youtube-icon.png" alt="YouTube" class="nav-social-icon" width="20" height="20">
+                    </a>
+                </li>
             </ul>
         </div>
     </nav>
@@ -206,7 +233,10 @@
                     <div class="show-platforms">
                         <a href="https://podcasts.apple.com/us/podcast/from-the-desk-of-anthony-pompliano/id1819778503" class="platform-button" aria-label="Listen on Apple Podcasts" target="_blank" rel="noopener noreferrer">
                             <span class="platform-icon">
-                                <img src="assets/images/apple-podcasts-logo.webp" alt="Apple Podcasts" class="platform-logo" width="28" height="28">
+                                <picture>
+                                    <source srcset="assets/images/apple-podcasts-icon.webp" type="image/webp">
+                                    <img src="assets/images/apple-podcasts-logo.webp" alt="Apple Podcasts" class="platform-logo" width="28" height="28">
+                                </picture>
                             </span>
                             <span class="platform-text">
                                 <span class="platform-name">Apple Podcasts</span>
@@ -250,7 +280,10 @@
                     <div class="show-platforms">
                         <a href="https://podcasts.apple.com/us/podcast/the-pomp-podcast/id1434060078" class="platform-button" aria-label="Listen on Apple Podcasts" target="_blank" rel="noopener noreferrer">
                             <span class="platform-icon">
-                                <img src="assets/images/apple-podcasts-logo.webp" alt="Apple Podcasts" class="platform-logo" width="28" height="28">
+                                <picture>
+                                    <source srcset="assets/images/apple-podcasts-icon.webp" type="image/webp">
+                                    <img src="assets/images/apple-podcasts-logo.webp" alt="Apple Podcasts" class="platform-logo" width="28" height="28">
+                                </picture>
                             </span>
                             <span class="platform-text">
                                 <span class="platform-name">Apple Podcasts</span>
@@ -371,6 +404,19 @@
     </section>
 
     </main>
+
+    <!-- Silvia Popup Modal -->
+    <div class="silvia-modal" id="silviaModal" role="dialog" aria-labelledby="silviaModalTitle" aria-describedby="silviaModalDesc" aria-modal="true">
+        <div class="silvia-modal-overlay" id="silviaModalOverlay"></div>
+        <div class="silvia-modal-content">
+            <button class="silvia-modal-close" id="silviaModalClose" aria-label="Close modal">&times;</button>
+            <h2 class="silvia-modal-title" id="silviaModalTitle">Meet Silvia, Your Personal CFO</h2>
+            <p class="silvia-modal-description" id="silviaModalDesc">
+                A free AI CFO for everyone. Call, chat, or email her for real-time insights into your finances, 24/7. Built by investors, for investors.
+            </p>
+            <a href="https://www.cfosilvia.com/" class="silvia-modal-button" target="_blank" rel="noopener noreferrer">Get Started in 30 seconds</a>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer" role="contentinfo">
