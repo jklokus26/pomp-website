@@ -176,12 +176,9 @@ const silviaModal = document.getElementById('silviaModal');
 const silviaModalClose = document.getElementById('silviaModalClose');
 const silviaModalOverlay = document.getElementById('silviaModalOverlay');
 
-// Check if user has already seen the modal
-const hasSeenSilviaModal = sessionStorage.getItem('hasSeenSilviaModal');
-
-// Show modal after a delay (3 seconds) if not seen in this session
+// Show modal after a delay
 function showSilviaModal() {
-    if (!hasSeenSilviaModal && silviaModal) {
+    if (silviaModal) {
         setTimeout(() => {
             silviaModal.classList.add('show');
             document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
@@ -194,7 +191,6 @@ function closeSilviaModal() {
     if (silviaModal) {
         silviaModal.classList.remove('show');
         document.body.style.overflow = ''; // Re-enable scrolling
-        sessionStorage.setItem('hasSeenSilviaModal', 'true'); // Remember that user has seen it
     }
 }
 
