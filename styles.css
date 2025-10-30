@@ -1394,17 +1394,43 @@ section {
         height: calc(100vh - 60px);
         background-color: var(--color-navy);
         flex-direction: column;
-        padding: var(--spacing-xl);
+        padding: var(--spacing-lg) var(--spacing-xl) var(--spacing-xxl);
         transition: left var(--speed-normal) ease;
+        overflow-y: auto;
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
+        gap: var(--spacing-xs);
     }
 
     .nav-menu.active {
         left: 0;
     }
 
+    .nav-menu > li {
+        width: 100%;
+    }
+
+    .nav-link {
+        display: block;
+        padding: 14px var(--spacing-md);
+        font-size: 17px;
+        border-radius: 8px;
+        transition: background-color 0.2s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link:active {
+        background-color: rgba(212, 175, 55, 0.1);
+    }
+
     /* Mobile Dropdown Styles */
     .dropdown {
         width: 100%;
+    }
+
+    .dropdown-toggle {
+        display: block;
+        padding: 14px var(--spacing-md);
     }
 
     .dropdown-menu {
@@ -1413,12 +1439,13 @@ section {
         opacity: 1;
         visibility: visible;
         width: 100%;
-        background-color: rgba(255, 255, 255, 0.05);
-        border: none;
-        border-radius: 0;
+        background-color: rgba(30, 58, 95, 0.3);
+        border: 1px solid rgba(212, 175, 55, 0.2);
+        border-radius: 8px;
         margin-top: var(--spacing-sm);
-        padding: var(--spacing-sm) 0;
-        box-shadow: none;
+        margin-bottom: var(--spacing-sm);
+        padding: var(--spacing-xs) 0;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     }
 
     .dropdown-arrow {
@@ -1426,8 +1453,16 @@ section {
     }
 
     .dropdown-item {
-        padding-left: var(--spacing-xl);
-        font-size: 16px;
+        padding: 12px var(--spacing-lg);
+        font-size: 15px;
+        border-radius: 6px;
+        margin: 0 var(--spacing-xs);
+        transition: background-color 0.2s ease;
+    }
+
+    .dropdown-item:hover,
+    .dropdown-item:active {
+        background-color: rgba(212, 175, 55, 0.15);
     }
 
     /* Mobile Social Icons */
@@ -1580,9 +1615,17 @@ section {
     }
 
     .platform-button {
-        flex: 1;
-        min-width: 140px;
+        flex: 0 0 auto;
+        width: calc(50% - 6px);
+        max-width: 160px;
         padding: 10px 16px;
+        justify-content: flex-start;
+    }
+
+    .platform-button:nth-child(3) {
+        width: calc(50% - 6px);
+        max-width: 160px;
+        margin: 0 auto;
     }
 
     .platform-icon {
