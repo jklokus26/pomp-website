@@ -45,8 +45,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <!-- Preload Critical Assets -->
-    <link rel="preload" href="assets/images/hero-bg.webp" as="image" type="image/webp" fetchpriority="high">
-    <link rel="preload" href="assets/images/pomp-headshot-2.webp" as="image" type="image/webp" fetchpriority="high">
+    <link rel="preload" href="assets/videos/ftd-hero-vid-optimized.mp4" as="video" type="video/mp4" fetchpriority="high">
     <link rel="preload" href="styles.css" as="style">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" as="style">
 
@@ -150,32 +149,19 @@
     <!-- Hero Section -->
     <main id="main-content">
         <section class="hero" id="hero" aria-label="Introduction">
-            <div class="hero-background-image" role="img" aria-label="Starry background with professional portrait">
-                <!-- Responsive Hero Background -->
-                <picture class="hero-background-picture">
-                    <source
-                        srcset="assets/images/hero-bg.webp"
-                        type="image/webp"
-                        media="(min-width: 1024px)">
-                    <source
-                        srcset="assets/images/hero-bg.webp"
-                        type="image/webp"
-                        media="(min-width: 768px)">
-                    <source
-                        srcset="assets/images/hero-bg.webp"
-                        type="image/webp">
-                    <img
-                        src="assets/images/hero-bg.png"
-                        alt=""
-                        class="hero-background-img"
-                        loading="eager"
-                        decoding="async"
-                        fetchpriority="high">
-                </picture>
-                <!-- Portrait layer will be handled via CSS -->
+            <div class="hero-background-image" role="img" aria-label="Anthony Pompliano video background">
+                <!-- Video Background -->
+                <video
+                    class="hero-background-video"
+                    autoplay
+                    loop
+                    muted
+                    playsinline
+                    preload="auto">
+                    <source src="assets/videos/ftd-hero-vid-optimized.mp4" type="video/mp4">
+                </video>
             </div>
             <div class="hero-overlay" aria-hidden="true"></div>
-            <div class="hero-portrait" aria-hidden="true"></div>
             <div class="hero-container">
                 <h1 class="hero-title">
                     <span class="hero-title-line">Investor.</span>
