@@ -826,9 +826,9 @@ section {
 }
 
 .investment-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 32px rgba(10, 22, 40, 0.15);
-    border-color: rgba(212, 175, 55, 0.3);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(10, 22, 40, 0.25), 0 0 0 2px var(--color-gold);
+    border-color: var(--color-gold);
 }
 
 .investment-card:focus-visible {
@@ -862,24 +862,15 @@ section {
 
 .book-content {
     display: grid;
-    grid-template-columns: 400px 1fr;
+    grid-template-columns: 550px 1fr;
     gap: var(--spacing-4xl);
     align-items: center;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 .book-details {
     max-width: 500px;
-}
-
-.book-badge {
-    font-size: var(--font-size-xs);
-    font-weight: 600;
-    letter-spacing: 1px;
-    color: var(--color-navy);
-    margin-bottom: var(--spacing-md);
-    display: block;
 }
 
 .book-title {
@@ -919,7 +910,7 @@ section {
 
 .book-cover {
     width: 100%;
-    max-width: 350px;
+    max-width: 550px;
     margin-right: auto;
 }
 
@@ -933,6 +924,103 @@ section {
     height: auto;
     display: block;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    transition: transform var(--speed-normal) ease;
+}
+
+.book-cover picture:hover .book-cover-img {
+    transform: scale(1.02);
+}
+
+/* ===== About Section ===== */
+.about {
+    background: linear-gradient(180deg, var(--color-navy) 0%, #0F1F35 100%);
+    padding: var(--spacing-4xl) var(--section-padding-x);
+    position: relative;
+    scroll-margin-top: 80px;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 500px;
+    gap: var(--spacing-4xl);
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-text {
+    max-width: 620px;
+}
+
+.about-title {
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    line-height: var(--line-height-tight);
+    margin-bottom: var(--spacing-xl);
+    color: var(--color-white);
+    letter-spacing: 0.5px;
+}
+
+.about-bio {
+    margin-bottom: 0;
+}
+
+.about-bio p {
+    font-size: var(--font-size-lg);
+    line-height: var(--line-height-relaxed);
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: var(--spacing-lg);
+}
+
+.about-bio p:last-child {
+    margin-bottom: 0;
+}
+
+.about-image {
+    width: 100%;
+    max-width: 500px;
+    justify-self: end;
+}
+
+.about-image picture {
+    display: block;
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+    position: relative;
+}
+
+.about-image picture::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.15);
+    pointer-events: none;
+}
+
+.about-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform var(--speed-normal) ease;
+}
+
+.about-image picture:hover .about-img {
+    transform: scale(1.02);
+}
+
+.about-divider {
+    max-width: 1200px;
+    margin: var(--spacing-xxl) auto 0;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.15) 50%,
+        transparent 100%
+    );
 }
 
 /* ===== Social Section ===== */
@@ -974,7 +1062,6 @@ section {
 }
 
 .social-card-twitter {
-    border: 2px solid var(--color-gold);
     background: linear-gradient(135deg, var(--color-navy-light) 0%, var(--color-accent) 100%);
 }
 
@@ -1227,7 +1314,7 @@ section {
     }
 
     .book-cover {
-        max-width: 300px;
+        max-width: 450px;
         margin: 0 auto;
     }
 
@@ -1238,6 +1325,25 @@ section {
 
     .social-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xxl);
+    }
+
+    .about-text {
+        max-width: 100%;
+    }
+
+    .about-image {
+        max-width: 400px;
+        justify-self: center;
+        order: 2;
+    }
+
+    .about-text {
+        order: 1;
     }
 }
 
@@ -1486,6 +1592,32 @@ section {
     .platform-logo {
         width: 28px;
         height: 28px;
+    }
+
+    /* About Section - Mobile Optimizations */
+    .about {
+        padding: var(--spacing-xxl) var(--spacing-md);
+    }
+
+    .about-title {
+        font-size: var(--font-size-3xl);
+        text-align: center;
+    }
+
+    .about-bio {
+        text-align: left;
+    }
+
+    .about-bio p {
+        font-size: var(--font-size-base);
+    }
+
+    .about-image {
+        max-width: 320px;
+    }
+
+    .about-divider {
+        margin-top: var(--spacing-xl);
     }
 }
 
