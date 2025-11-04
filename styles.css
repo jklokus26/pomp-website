@@ -512,7 +512,7 @@ section {
 
 /* ===== Shows Section ===== */
 .shows {
-    background: linear-gradient(180deg, var(--color-navy-dark) 0%, var(--color-navy) 100%);
+    background: linear-gradient(180deg, var(--color-navy-dark) 0%, #0E1C30 50%, #152D4A 100%);
     border-top: 1px solid var(--color-border);
 }
 
@@ -664,7 +664,7 @@ section {
 
 /* ===== Newsletter Section ===== */
 .newsletter {
-    background: linear-gradient(180deg, var(--color-navy) 0%, var(--color-navy-dark) 100%);
+    background: linear-gradient(180deg, #152D4A 0%, #0C1725 50%, var(--color-navy-dark) 100%);
     color: var(--color-white);
     text-align: center;
     border-top: 1px solid var(--color-border);
@@ -750,6 +750,144 @@ section {
     font-size: 16px;
 }
 
+/* ===== Testimonial Carousel ===== */
+.testimonial-carousel {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: var(--spacing-xl) 0;
+}
+
+.testimonial-carousel-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    background: rgba(22, 41, 66, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    min-height: 200px;
+}
+
+.testimonial-slide {
+    display: none;
+    padding: var(--spacing-xxl);
+    text-align: center;
+    animation: fadeIn 0.5s ease;
+}
+
+.testimonial-slide.active {
+    display: block;
+}
+
+.testimonial-quote {
+    font-size: var(--font-size-lg);
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--color-white);
+    margin-bottom: var(--spacing-lg);
+    font-style: italic;
+}
+
+.testimonial-author {
+    font-size: 16px;
+    color: var(--color-text-gray);
+    font-weight: 500;
+    margin: 0;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    color: var(--color-white);
+    font-size: 32px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.carousel-btn:hover {
+    background: rgba(212, 175, 55, 0.2);
+    border-color: var(--color-gold);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-prev {
+    left: -60px;
+}
+
+.carousel-next {
+    right: -60px;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: var(--spacing-lg);
+}
+
+.carousel-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carousel-dot.active {
+    background: var(--color-gold);
+    transform: scale(1.2);
+}
+
+.carousel-dot:hover {
+    background: rgba(212, 175, 55, 0.6);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Mobile responsive carousel */
+@media (max-width: 768px) {
+    .carousel-prev {
+        left: 10px;
+    }
+
+    .carousel-next {
+        right: 10px;
+    }
+
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 24px;
+    }
+
+    .testimonial-quote {
+        font-size: var(--font-size-lg);
+    }
+
+    .testimonial-slide {
+        padding: var(--spacing-lg);
+    }
+}
+
 /* ===== Investments Section ===== */
 .investments {
     background: var(--color-white);
@@ -767,7 +905,7 @@ section {
 
 .investment-card {
     position: relative;
-    background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-navy-light) 100%);
+    background: linear-gradient(135deg, #0A1628 0%, #0D1E35 50%, #1A3352 100%);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -893,7 +1031,7 @@ section {
 
 /* ===== About Section ===== */
 .about {
-    background: linear-gradient(180deg, var(--color-navy) 0%, #0F1F35 100%);
+    background: linear-gradient(180deg, var(--color-navy) 0%, #09131F 50%, #0D1B2E 100%);
     padding: var(--spacing-4xl) var(--section-padding-x);
     position: relative;
     scroll-margin-top: 80px;
@@ -917,8 +1055,11 @@ section {
     font-weight: 700;
     line-height: var(--line-height-tight);
     margin-bottom: var(--spacing-xl);
-    color: var(--color-white);
     letter-spacing: 0.5px;
+    background: linear-gradient(135deg, #F0C55E 0%, #D9A73E 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .about-bio {
@@ -985,7 +1126,7 @@ section {
 
 /* ===== Social Section ===== */
 .social {
-    background: linear-gradient(180deg, var(--color-navy) 0%, var(--color-navy-dark) 100%);
+    background: linear-gradient(180deg, #0D1B2E 0%, #0A1628 50%, #050B14 100%);
     border-top: 1px solid var(--color-border);
 }
 
@@ -997,7 +1138,7 @@ section {
 }
 
 .social-card {
-    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-navy-light) 100%);
+    background: linear-gradient(135deg, #1E3A5F 0%, #11243C 50%, #1A3352 100%);
     padding: var(--spacing-lg);
     border-radius: 20px;
     text-align: center;
@@ -1022,7 +1163,7 @@ section {
 }
 
 .social-card-twitter {
-    background: linear-gradient(135deg, var(--color-navy-light) 0%, var(--color-accent) 100%);
+    background: linear-gradient(135deg, #1A3352 0%, #11243C 50%, #1E3A5F 100%);
 }
 
 .social-icon {
@@ -1071,7 +1212,7 @@ section {
 
 /* ===== Footer ===== */
 .footer {
-    background-color: var(--color-navy-dark);
+    background: linear-gradient(180deg, #050B14 0%, #000000 100%);
     color: var(--color-white);
     padding: var(--spacing-xl) var(--spacing-md);
     border-top: 1px solid var(--color-border);
