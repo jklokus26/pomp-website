@@ -240,24 +240,33 @@ h3, .h3 {
 
 @media (max-width: 768px) {
     .announcement-banner {
-        padding: 4px 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        height: 40px;
     }
 
     .announcement-container {
-        height: auto;
-        min-height: 28px;
+        height: 100%;
+        min-height: unset;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .announcement-text {
         font-size: 11px;
-        line-height: 1.25;
+        line-height: 1.2;
     }
 
     .announcement-item {
-        position: relative;
-        left: 0;
-        right: 0;
+        position: absolute;
+        left: var(--space-2);
+        right: var(--space-2);
+        display: flex;
+        align-items: center;
         padding: 0 var(--space-2);
+        height: 100%;
     }
 }
 
@@ -1540,8 +1549,8 @@ section {
     }
 
     .hero {
-        padding-top: var(--spacing-md); /* Reduced from 64px to 24px for ultra-compact layout */
-        margin-top: 96px; /* 36px announcement banner + 60px nav */
+        padding-top: 0; /* Remove top padding for precise control */
+        margin-top: 100px; /* 40px announcement banner + 60px nav */
         min-height: 700px; /* Fixed height instead of 100vh to prevent layout shifts from URL bar showing/hiding */
         align-items: flex-start; /* Position content at top on mobile for better viewport usage */
         justify-content: flex-start;
@@ -1555,7 +1564,7 @@ section {
     }
 
     .nav {
-        top: 36px; /* Adjust for optimized announcement banner on mobile */
+        top: 40px; /* Match exact banner height on mobile */
     }
 
     .nav-toggle {
@@ -1564,10 +1573,10 @@ section {
 
     .nav-menu {
         position: fixed;
-        top: 96px; /* 36px announcement banner + 60px nav bar */
+        top: 100px; /* 40px announcement banner + 60px nav bar */
         left: -100%;
         width: 100%;
-        height: calc(100vh - 96px); /* Account for announcement banner + nav bar */
+        height: calc(100vh - 100px); /* Account for announcement banner + nav bar */
         background-color: var(--color-navy);
         flex-direction: column;
         padding: var(--spacing-lg) var(--spacing-xl) var(--spacing-xxl);
@@ -1689,8 +1698,8 @@ section {
         align-items: center;
         padding-left: var(--spacing-md);
         padding-right: var(--spacing-md);
-        padding-top: 80px; /* Move hero text down for better balance */
-        padding-bottom: var(--spacing-xxl); /* Add explicit bottom padding for spacing */
+        padding-top: 100px; /* Move hero text down slightly from top */
+        padding-bottom: var(--spacing-lg); /* Reduce space underneath text */
         transform: translateZ(0); /* Force GPU layer to prevent layout shifts */
     }
 
