@@ -1,3 +1,23 @@
+// ===== Announcement Banner Rotation =====
+const announcementItems = document.querySelectorAll('.announcement-item');
+let currentAnnouncementIndex = 0;
+
+function rotateAnnouncements() {
+    // Remove active class from current announcement
+    announcementItems[currentAnnouncementIndex].classList.remove('active');
+
+    // Move to next announcement
+    currentAnnouncementIndex = (currentAnnouncementIndex + 1) % announcementItems.length;
+
+    // Add active class to next announcement
+    announcementItems[currentAnnouncementIndex].classList.add('active');
+}
+
+// Rotate announcements every 4.5 seconds
+if (announcementItems.length > 1) {
+    setInterval(rotateAnnouncements, 4500);
+}
+
 // ===== Navigation Functionality =====
 const nav = document.getElementById('nav');
 const navToggle = document.getElementById('navToggle');
@@ -171,46 +191,6 @@ if ('loading' in HTMLImageElement.prototype) {
     document.body.appendChild(script);
 }
 
-// ===== Silvia Modal Popup =====
-const silviaModal = document.getElementById('silviaModal');
-const silviaModalClose = document.getElementById('silviaModalClose');
-const silviaModalOverlay = document.getElementById('silviaModalOverlay');
-
-// Show modal after a delay
-function showSilviaModal() {
-    if (silviaModal) {
-        setTimeout(() => {
-            silviaModal.classList.add('show');
-            document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
-        }, 7000); // Show after 7 seconds
-    }
-}
-
-// Close modal function
-function closeSilviaModal() {
-    if (silviaModal) {
-        silviaModal.classList.remove('show');
-        document.body.style.overflow = ''; // Re-enable scrolling
-    }
-}
-
-// Close modal when clicking the X button
-if (silviaModalClose) {
-    silviaModalClose.addEventListener('click', closeSilviaModal);
-}
-
-// Close modal when clicking the overlay (background)
-if (silviaModalOverlay) {
-    silviaModalOverlay.addEventListener('click', closeSilviaModal);
-}
-
-// Close modal when pressing Escape key
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && silviaModal && silviaModal.classList.contains('show')) {
-        closeSilviaModal();
-    }
-});
-
 // ===== Initialize =====
 document.addEventListener('DOMContentLoaded', () => {
     // Set initial state
@@ -223,8 +203,11 @@ document.addEventListener('DOMContentLoaded', () => {
         hero.style.transform = 'translateY(0)';
     }
 
-    // Show Silvia modal after delay
-    showSilviaModal();
+    // Slow down hero video playback by 15%
+    const heroVideo = document.querySelector('.hero-background-video');
+    if (heroVideo) {
+        heroVideo.playbackRate = 0.85; // 15% slower than normal speed
+    }
 
     // Website initialized successfully
 });
