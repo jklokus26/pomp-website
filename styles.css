@@ -240,24 +240,24 @@ h3, .h3 {
 
 @media (max-width: 768px) {
     .announcement-banner {
-        padding: 6px 0;
+        padding: 4px 0;
     }
 
     .announcement-container {
         height: auto;
-        min-height: 32px;
+        min-height: 28px;
     }
 
     .announcement-text {
         font-size: 11px;
-        line-height: 1.3;
+        line-height: 1.25;
     }
 
     .announcement-item {
         position: relative;
         left: 0;
         right: 0;
-        padding: 0 var(--space-3);
+        padding: 0 var(--space-2);
     }
 }
 
@@ -1541,7 +1541,7 @@ section {
 
     .hero {
         padding-top: var(--spacing-md); /* Reduced from 64px to 24px for ultra-compact layout */
-        margin-top: 104px; /* 44px announcement banner + 60px nav */
+        margin-top: 96px; /* 36px announcement banner + 60px nav */
         min-height: 700px; /* Fixed height instead of 100vh to prevent layout shifts from URL bar showing/hiding */
         align-items: flex-start; /* Position content at top on mobile for better viewport usage */
         justify-content: flex-start;
@@ -1555,7 +1555,7 @@ section {
     }
 
     .nav {
-        top: 44px; /* Adjust for optimized announcement banner on mobile */
+        top: 36px; /* Adjust for optimized announcement banner on mobile */
     }
 
     .nav-toggle {
@@ -1564,10 +1564,10 @@ section {
 
     .nav-menu {
         position: fixed;
-        top: 104px; /* 44px announcement banner + 60px nav bar */
+        top: 96px; /* 36px announcement banner + 60px nav bar */
         left: -100%;
         width: 100%;
-        height: calc(100vh - 104px); /* Account for announcement banner + nav bar */
+        height: calc(100vh - 96px); /* Account for announcement banner + nav bar */
         background-color: var(--color-navy);
         flex-direction: column;
         padding: var(--spacing-lg) var(--spacing-xl) var(--spacing-xxl);
@@ -1689,7 +1689,7 @@ section {
         align-items: center;
         padding-left: var(--spacing-md);
         padding-right: var(--spacing-md);
-        padding-top: 40px; /* Optimized for better mobile viewport usage */
+        padding-top: 80px; /* Move hero text down for better balance */
         padding-bottom: var(--spacing-xxl); /* Add explicit bottom padding for spacing */
         transform: translateZ(0); /* Force GPU layer to prevent layout shifts */
     }
