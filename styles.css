@@ -240,10 +240,10 @@ h3, .h3 {
 
 @media (max-width: 768px) {
     .announcement-banner {
-        padding: 6px 0;
+        padding: 8px 12px;
         display: flex;
         align-items: center;
-        min-height: 52px;
+        min-height: 48px;
         height: auto;
     }
 
@@ -254,13 +254,15 @@ h3, .h3 {
         align-items: center;
         justify-content: center;
         width: 100%;
+        padding: 0;
     }
 
     .announcement-text {
-        font-size: 10px;
-        line-height: 1.35;
+        font-size: 11px;
+        line-height: 1.4;
         white-space: normal;
         text-align: center;
+        max-width: 100%;
     }
 
     .announcement-item {
@@ -270,7 +272,7 @@ h3, .h3 {
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 0 var(--space-2);
+        padding: 0 8px;
         height: auto;
         width: 100%;
     }
@@ -1556,7 +1558,7 @@ section {
 
     .hero {
         padding-top: 0; /* Remove top padding for precise control */
-        margin-top: 112px; /* 52px announcement banner + 60px nav */
+        margin-top: 108px; /* 48px announcement banner + 60px nav */
         min-height: 700px; /* Fixed height instead of 100vh to prevent layout shifts from URL bar showing/hiding */
         align-items: flex-start; /* Position content at top on mobile for better viewport usage */
         justify-content: flex-start;
@@ -1570,7 +1572,7 @@ section {
     }
 
     .nav {
-        top: 52px; /* Match banner min-height on mobile */
+        top: 48px; /* Match banner min-height on mobile */
     }
 
     .nav-toggle {
@@ -1579,10 +1581,10 @@ section {
 
     .nav-menu {
         position: fixed;
-        top: 112px; /* 52px announcement banner + 60px nav bar */
+        top: 108px; /* 48px announcement banner + 60px nav bar */
         left: -100%;
         width: 100%;
-        height: calc(100vh - 112px); /* Account for announcement banner + nav bar */
+        height: calc(100vh - 108px); /* Account for announcement banner + nav bar */
         background-color: var(--color-navy);
         flex-direction: column;
         padding: var(--spacing-lg) var(--spacing-xl) var(--spacing-xxl);
