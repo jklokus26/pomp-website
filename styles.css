@@ -240,10 +240,11 @@ h3, .h3 {
 
 @media (max-width: 768px) {
     .announcement-banner {
-        padding: 0;
+        padding: 6px 0;
         display: flex;
         align-items: center;
-        height: 40px;
+        min-height: 52px;
+        height: auto;
     }
 
     .announcement-container {
@@ -256,21 +257,21 @@ h3, .h3 {
     }
 
     .announcement-text {
-        font-size: 9px;
-        line-height: 1.2;
-        white-space: nowrap;
-        overflow: visible;
+        font-size: 10px;
+        line-height: 1.35;
+        white-space: normal;
+        text-align: center;
     }
 
     .announcement-item {
-        position: absolute;
+        position: relative;
         left: 0;
         right: 0;
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 0 var(--space-1);
-        height: 100%;
+        padding: 0 var(--space-2);
+        height: auto;
         width: 100%;
     }
 }
@@ -1555,7 +1556,7 @@ section {
 
     .hero {
         padding-top: 0; /* Remove top padding for precise control */
-        margin-top: 100px; /* 40px announcement banner + 60px nav */
+        margin-top: 112px; /* 52px announcement banner + 60px nav */
         min-height: 700px; /* Fixed height instead of 100vh to prevent layout shifts from URL bar showing/hiding */
         align-items: flex-start; /* Position content at top on mobile for better viewport usage */
         justify-content: flex-start;
@@ -1569,7 +1570,7 @@ section {
     }
 
     .nav {
-        top: 40px; /* Match exact 40px banner height on mobile */
+        top: 52px; /* Match banner min-height on mobile */
     }
 
     .nav-toggle {
@@ -1578,10 +1579,10 @@ section {
 
     .nav-menu {
         position: fixed;
-        top: 100px; /* 40px announcement banner + 60px nav bar */
+        top: 112px; /* 52px announcement banner + 60px nav bar */
         left: -100%;
         width: 100%;
-        height: calc(100vh - 100px); /* Account for announcement banner + nav bar */
+        height: calc(100vh - 112px); /* Account for announcement banner + nav bar */
         background-color: var(--color-navy);
         flex-direction: column;
         padding: var(--spacing-lg) var(--spacing-xl) var(--spacing-xxl);
