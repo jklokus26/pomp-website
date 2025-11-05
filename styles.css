@@ -1800,31 +1800,37 @@ section {
     }
 
     .show-platforms {
-        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
         gap: var(--spacing-sm);
+        justify-content: center;
     }
 
     .platform-button {
         flex: 0 0 auto;
-        width: calc(50% - 6px);
-        max-width: 160px;
-        padding: 10px 16px;
-        justify-content: flex-start;
+        width: 100%;
+        max-width: none;
+        padding: 12px 8px;
+        justify-content: center;
     }
 
     .platform-button:nth-child(3) {
-        width: calc(50% - 6px);
-        max-width: 160px;
-        margin: 0 auto;
+        width: 100%;
+        max-width: none;
+        margin: 0;
+    }
+
+    .platform-text {
+        display: none;
     }
 
     .platform-icon {
-        font-size: 24px;
+        font-size: 32px;
     }
 
     .platform-logo {
-        width: 28px;
-        height: 28px;
+        width: 36px;
+        height: 36px;
     }
 
     /* About Section - Mobile Optimizations */
@@ -1834,7 +1840,7 @@ section {
 
     .about-title {
         font-size: var(--font-size-3xl);
-        text-align: center;
+        text-align: left;
     }
 
     .about-bio {
