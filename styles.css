@@ -1562,10 +1562,7 @@ section {
     }
 
     .hero-title {
-        font-size: 27px; /* Reduced from 31px for more compact mobile layout */
-        margin-bottom: 18px; /* Reduced from 24px for tighter spacing */
-        animation: none; /* Disable fadeInUp animation on mobile to prevent scroll interference */
-        opacity: 1; /* Ensure immediately visible */
+        display: none; /* Hide hero title text on mobile only */
     }
 
     .nav {
@@ -1703,7 +1700,7 @@ section {
         align-items: center;
         padding-left: var(--spacing-md);
         padding-right: var(--spacing-md);
-        padding-top: 400px; /* Increased from 200px to move content significantly lower on screen */
+        padding-top: 400px; /* Keep buttons in same position after hiding title text */
         padding-bottom: var(--spacing-lg); /* Reduce space underneath text */
         transform: translateZ(0); /* Force GPU layer to prevent layout shifts */
     }
