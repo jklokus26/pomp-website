@@ -3,18 +3,28 @@ const announcementItems = document.querySelectorAll('.announcement-item');
 let currentAnnouncementIndex = 0;
 
 function rotateAnnouncements() {
-    // Remove active class from current announcement
-    announcementItems[currentAnnouncementIndex].classList.remove('active');
+    // Defensive check: ensure announcement items exist
+    if (!announcementItems || announcementItems.length === 0) {
+        console.warn('No announcement items found for rotation');
+        return;
+    }
 
-    // Move to next announcement
-    currentAnnouncementIndex = (currentAnnouncementIndex + 1) % announcementItems.length;
+    try {
+        // Remove active class from current announcement
+        announcementItems[currentAnnouncementIndex].classList.remove('active');
 
-    // Add active class to next announcement
-    announcementItems[currentAnnouncementIndex].classList.add('active');
+        // Move to next announcement
+        currentAnnouncementIndex = (currentAnnouncementIndex + 1) % announcementItems.length;
+
+        // Add active class to next announcement
+        announcementItems[currentAnnouncementIndex].classList.add('active');
+    } catch (error) {
+        console.error('Error rotating announcements:', error);
+    }
 }
 
-// Rotate announcements every 4.5 seconds
-if (announcementItems.length > 1) {
+// Rotate announcements every 4.5 seconds (only if multiple announcements exist)
+if (announcementItems && announcementItems.length > 1) {
     setInterval(rotateAnnouncements, 4500);
 }
 
@@ -24,25 +34,36 @@ const navToggle = document.getElementById('navToggle');
 const navMenu = document.getElementById('navMenu');
 const navLinks = document.querySelectorAll('.nav-link');
 
-// Mobile menu toggle
-navToggle.addEventListener('click', () => {
-    const isActive = navMenu.classList.toggle('active');
+// Defensive check: ensure required navigation elements exist
+if (!nav || !navToggle || !navMenu) {
+    console.error('Required navigation elements not found');
+} else {
+    // Mobile menu toggle
+    navToggle.addEventListener('click', () => {
+        try {
+            const isActive = navMenu.classList.toggle('active');
 
-    // Update ARIA attribute for accessibility
-    navToggle.setAttribute('aria-expanded', isActive);
+            // Update ARIA attribute for accessibility
+            navToggle.setAttribute('aria-expanded', isActive);
 
-    // Animate hamburger icon
-    const spans = navToggle.querySelectorAll('span');
-    if (isActive) {
-        spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-        spans[1].style.opacity = '0';
-        spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
-    } else {
-        spans[0].style.transform = 'none';
-        spans[1].style.opacity = '1';
-        spans[2].style.transform = 'none';
-    }
-});
+            // Animate hamburger icon
+            const spans = navToggle.querySelectorAll('span');
+            if (spans.length >= 3) {
+                if (isActive) {
+                    spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+                    spans[1].style.opacity = '0';
+                    spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+                } else {
+                    spans[0].style.transform = 'none';
+                    spans[1].style.opacity = '1';
+                    spans[2].style.transform = 'none';
+                }
+            }
+        } catch (error) {
+            console.error('Error toggling navigation menu:', error);
+        }
+    });
+}
 
 // Dropdown functionality for all dropdowns
 const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
@@ -62,17 +83,25 @@ dropdownToggles.forEach(toggle => {
 });
 
 // Close mobile menu when clicking a link
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        navToggle.setAttribute('aria-expanded', 'false');
+if (navLinks && navMenu && navToggle) {
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            try {
+                navMenu.classList.remove('active');
+                navToggle.setAttribute('aria-expanded', 'false');
 
-        const spans = navToggle.querySelectorAll('span');
-        spans[0].style.transform = 'none';
-        spans[1].style.opacity = '1';
-        spans[2].style.transform = 'none';
+                const spans = navToggle.querySelectorAll('span');
+                if (spans.length >= 3) {
+                    spans[0].style.transform = 'none';
+                    spans[1].style.opacity = '1';
+                    spans[2].style.transform = 'none';
+                }
+            } catch (error) {
+                console.error('Error closing mobile menu:', error);
+            }
+        });
     });
-});
+}
 
 // Close dropdown when clicking outside
 document.addEventListener('click', (e) => {
@@ -89,35 +118,45 @@ document.addEventListener('click', (e) => {
 // Add scroll effect to navigation
 let lastScroll = 0;
 
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
+if (nav) {
+    window.addEventListener('scroll', () => {
+        try {
+            const currentScroll = window.pageYOffset;
 
-    if (currentScroll > 50) {
-        nav.classList.add('scrolled');
-    } else {
-        nav.classList.remove('scrolled');
-    }
+            if (currentScroll > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
 
-    lastScroll = currentScroll;
-}, { passive: true });
+            lastScroll = currentScroll;
+        } catch (error) {
+            console.error('Error handling scroll effect:', error);
+        }
+    }, { passive: true });
+}
 
 // ===== Smooth Scroll with Offset =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
+        try {
+            e.preventDefault();
 
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
 
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-            const navHeight = nav.offsetHeight;
-            const targetPosition = targetElement.offsetTop - navHeight;
+            const targetElement = document.querySelector(targetId);
+            if (targetElement && nav) {
+                const navHeight = nav.offsetHeight;
+                const targetPosition = targetElement.offsetTop - navHeight;
 
-            window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
-            });
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        } catch (error) {
+            console.error('Error during smooth scroll:', error);
         }
     });
 });
@@ -178,16 +217,18 @@ function highlightNavigation() {
 window.addEventListener('scroll', highlightNavigation, { passive: true });
 
 // ===== Performance: Lazy Loading Images =====
-// This would be used when actual images are added
-if ('loading' in HTMLImageElement.prototype) {
-    const images = document.querySelectorAll('img[loading="lazy"]');
-    images.forEach(img => {
-        img.src = img.dataset.src;
-    });
-} else {
-    // Fallback for browsers that don't support lazy loading
+// Native lazy loading is supported, but provide fallback for older browsers
+if (!('loading' in HTMLImageElement.prototype)) {
+    // Fallback for browsers that don't support native lazy loading
     const script = document.createElement('script');
     script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
+    // Add Subresource Integrity (SRI) for security
+    script.integrity = 'sha384-RqDRHKZp0kZiyGC+AAoaItaIJhdM5HsrN6A0+z9y2AMLPX6MAbGMHdY7RfQfV9wE';
+    script.crossOrigin = 'anonymous';
+    // Handle script load errors
+    script.onerror = () => {
+        console.error('Failed to load lazysizes library from CDN');
+    };
     document.body.appendChild(script);
 }
 
