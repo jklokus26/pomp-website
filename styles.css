@@ -1562,8 +1562,8 @@ section {
     }
 
     .hero-title {
-        font-size: 31px; /* Increased by 10% from 28px for better visual hierarchy */
-        margin-bottom: var(--spacing-md); /* Increased to 24px for balanced spacing between title and buttons */
+        font-size: 27px; /* Reduced from 31px for more compact mobile layout */
+        margin-bottom: 18px; /* Reduced from 24px for tighter spacing */
         animation: none; /* Disable fadeInUp animation on mobile to prevent scroll interference */
         opacity: 1; /* Ensure immediately visible */
     }
@@ -1703,7 +1703,7 @@ section {
         align-items: center;
         padding-left: var(--spacing-md);
         padding-right: var(--spacing-md);
-        padding-top: 100px; /* Move hero text down slightly from top */
+        padding-top: 70px; /* Reduced from 100px to position content higher, avoiding face area */
         padding-bottom: var(--spacing-lg); /* Reduce space underneath text */
         transform: translateZ(0); /* Force GPU layer to prevent layout shifts */
     }
@@ -1734,14 +1734,15 @@ section {
         flex-direction: column;
         justify-content: center;
         width: 100%;
-        gap: 6px; /* Further reduced from 8px for ultra-compact layout */
+        gap: 4px; /* Further reduced from 6px for more compact layout */
         animation: none; /* Disable fadeInUp animation on mobile to prevent scroll interference */
         opacity: 1; /* Ensure immediately visible */
     }
 
     .btn {
         width: 100%;
-        padding: 14px var(--spacing-lg);
+        padding: 11px var(--spacing-lg); /* Reduced from 14px for more compact buttons */
+        font-size: 14px; /* Reduced from 16px for smaller button text */
     }
 
     /* Investment Cards - Mobile Optimizations */
