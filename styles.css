@@ -1394,6 +1394,15 @@ section {
     }
 }
 
+@keyframes panStars {
+    0% {
+        background-position: 0% center;
+    }
+    100% {
+        background-position: 100% center;
+    }
+}
+
 /* Portrait: micro float + micro tilt */
 @keyframes portraitFloat {
     0% {
@@ -1720,10 +1729,11 @@ section {
 
     .hero-background-image {
         background-image: url('assets/images/hero-bg.webp');
-        background-size: cover;
+        background-size: 120% auto; /* Slightly larger for smooth panning */
         background-position: center;
         background-repeat: no-repeat;
         filter: brightness(1.1) saturate(1.15); /* Brighter, more vibrant blue */
+        animation: panStars 60s linear infinite; /* Slow horizontal star movement */
     }
 
     .hero-background-img {
@@ -1738,7 +1748,7 @@ section {
         align-items: center;
         padding-left: var(--spacing-md);
         padding-right: var(--spacing-md);
-        padding-top: 100px; /* Spacing for portrait, title, and buttons */
+        padding-top: 400px; /* Space for portrait (90px + 280px height + 30px gap) */
         padding-bottom: var(--spacing-lg);
         transform: translateZ(0); /* Force GPU layer to prevent layout shifts */
         z-index: 3; /* Above overlay to ensure portrait visibility */
