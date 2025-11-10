@@ -1381,7 +1381,7 @@ section {
         transform: scale(1);
     }
     to {
-        transform: scale(1.06);
+        transform: scale(1.1);
     }
 }
 
@@ -1704,6 +1704,7 @@ section {
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
         position: relative;
         z-index: 2;
+        animation: subtleZoom 20s ease-in-out infinite alternate;
     }
 
     /* Hide video on mobile, show static background instead */
@@ -1717,7 +1718,6 @@ section {
         background-position: center;
         background-repeat: no-repeat;
         filter: brightness(1.1) saturate(1.15); /* Brighter, more vibrant blue */
-        animation: subtleZoom 6.67s ease-in-out infinite alternate; /* 3x faster than 20s */
     }
 
     .hero-background-img {
@@ -1734,6 +1734,7 @@ section {
         padding-top: 100px; /* Spacing for portrait, title, and buttons */
         padding-bottom: var(--spacing-lg);
         transform: translateZ(0); /* Force GPU layer to prevent layout shifts */
+        z-index: 3; /* Above overlay to ensure portrait visibility */
     }
 
     .hero-value-prop {
