@@ -1702,6 +1702,8 @@ section {
         margin: 0 auto var(--spacing-lg);
         border-radius: 16px;
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        position: relative;
+        z-index: 2;
     }
 
     /* Hide video on mobile, show static background instead */
@@ -1715,7 +1717,7 @@ section {
         background-position: center;
         background-repeat: no-repeat;
         filter: brightness(1.1) saturate(1.15); /* Brighter, more vibrant blue */
-        animation: subtleZoom 20s ease-in-out infinite alternate;
+        animation: subtleZoom 6.67s ease-in-out infinite alternate; /* 3x faster than 20s */
     }
 
     .hero-background-img {
