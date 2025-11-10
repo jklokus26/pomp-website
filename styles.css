@@ -1718,6 +1718,7 @@ section {
         background-position: center;
         background-repeat: no-repeat;
         filter: brightness(1.1) saturate(1.15); /* Brighter, more vibrant blue */
+        animation: subtleZoom 3.33s ease-in-out infinite alternate; /* 6x faster than 20s */
     }
 
     .hero-background-img {
@@ -1727,6 +1728,7 @@ section {
     }
 
     .hero-container {
+        position: relative; /* Required for z-index to work */
         text-align: center;
         align-items: center;
         padding-left: var(--spacing-md);
