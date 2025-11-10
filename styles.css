@@ -1715,6 +1715,7 @@ section {
         background-position: center;
         background-repeat: no-repeat;
         filter: brightness(1.1) saturate(1.15); /* Brighter, more vibrant blue */
+        animation: subtleZoom 20s ease-in-out infinite alternate;
     }
 
     .hero-background-img {
