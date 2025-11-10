@@ -1696,15 +1696,21 @@ section {
 
     .hero-portrait-mobile {
         display: block;
+        position: absolute;
+        top: 90px; /* Position below nav */
+        left: 50%;
+        transform: translateX(-50%); /* Center horizontally */
         width: 280px;
-        max-width: 75%;
-        height: auto;
-        margin: 0 auto var(--spacing-lg);
+        height: 280px;
+        background-image: url('assets/images/pomp-portrait.webp');
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
         border-radius: 16px;
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-        position: relative;
         z-index: 2;
-        animation: subtleZoom 20s ease-in-out infinite alternate;
+        opacity: 1;
+        animation: none; /* No animation on mobile portrait, matching backup */
     }
 
     /* Hide video on mobile, show static background instead */
@@ -1718,7 +1724,6 @@ section {
         background-position: center;
         background-repeat: no-repeat;
         filter: brightness(1.1) saturate(1.15); /* Brighter, more vibrant blue */
-        animation: subtleZoom 3.33s ease-in-out infinite alternate; /* 6x faster than 20s */
     }
 
     .hero-background-img {
