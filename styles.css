@@ -533,6 +533,10 @@ h3, .h3 {
     animation-fill-mode: backwards;
 }
 
+.hero-portrait-mobile {
+    display: none; /* Hidden on desktop, shown only on mobile via media query */
+}
+
 /* ===== Buttons ===== */
 .btn {
     display: inline-block;
@@ -1562,7 +1566,9 @@ section {
     }
 
     .hero-title {
-        display: none; /* Hide hero title text on mobile only */
+        display: block; /* Show hero title text on mobile */
+        font-size: var(--font-size-2xl);
+        margin-bottom: var(--spacing-lg);
     }
 
     .nav {
@@ -1688,9 +1694,31 @@ section {
         transform: translateZ(0); /* Force GPU acceleration and prevent layout shifts */
     }
 
+    .hero-portrait-mobile {
+        display: block;
+        width: 280px;
+        max-width: 75%;
+        height: auto;
+        margin: 0 auto var(--spacing-lg);
+        border-radius: 16px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Hide video on mobile, show static background instead */
+    .hero-background-video {
+        display: none; /* Hide video on mobile */
+    }
+
+    .hero-background-image {
+        background-image: url('assets/images/hero-bg.webp');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        filter: brightness(1.1) saturate(1.15); /* Brighter, more vibrant blue */
+    }
+
     .hero-background-img {
-        opacity: 1; /* Make stars fully visible */
-        filter: brightness(1.8) contrast(1.2); /* Dramatically increase star visibility */
+        opacity: 1;
         animation: none; /* Disable animation on mobile for smooth scrolling */
         will-change: auto; /* Disable will-change for better scroll performance */
     }
@@ -1700,8 +1728,8 @@ section {
         align-items: center;
         padding-left: var(--spacing-md);
         padding-right: var(--spacing-md);
-        padding-top: 400px; /* Keep buttons in same position after hiding title text */
-        padding-bottom: var(--spacing-lg); /* Reduce space underneath text */
+        padding-top: 100px; /* Spacing for portrait, title, and buttons */
+        padding-bottom: var(--spacing-lg);
         transform: translateZ(0); /* Force GPU layer to prevent layout shifts */
     }
 
@@ -1721,9 +1749,9 @@ section {
     .hero-overlay {
         background: linear-gradient(
             180deg,
-            rgba(10, 22, 40, 0.5) 0%,
-            rgba(10, 22, 40, 0.65) 50%,
-            rgba(10, 22, 40, 0.75) 100%
+            rgba(10, 22, 40, 0.3) 0%,
+            rgba(10, 22, 40, 0.45) 50%,
+            rgba(10, 22, 40, 0.6) 100%
         );
     }
 
@@ -1731,15 +1759,16 @@ section {
         flex-direction: column;
         justify-content: center;
         width: 100%;
-        gap: 4px; /* Further reduced from 6px for more compact layout */
+        gap: 12px; /* Comfortable spacing between buttons */
         animation: none; /* Disable fadeInUp animation on mobile to prevent scroll interference */
         opacity: 1; /* Ensure immediately visible */
     }
 
     .btn {
-        width: 264px; /* Scaled down 15% from 310px (310 * 0.85 = 264) */
-        padding: 9px 20px; /* Scaled down 15% from 11px 24px */
-        font-size: 12px; /* Scaled down 15% from 14px (14 * 0.85 = 12) */
+        width: 90%; /* Wide buttons to match screenshot */
+        max-width: 400px; /* Prevent excessive width */
+        padding: 16px 24px; /* Comfortable touch target */
+        font-size: 16px; /* Readable button text */
         margin: 0 auto; /* Center buttons within container */
     }
 
