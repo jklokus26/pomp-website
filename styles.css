@@ -1569,7 +1569,7 @@ section {
     .hero {
         padding-top: 0; /* Remove top padding for precise control */
         margin-top: 104px; /* 44px announcement banner + 60px nav */
-        min-height: 700px; /* Fixed height instead of 100vh to prevent layout shifts from URL bar showing/hiding */
+        min-height: 550px; /* Reduced to fit portrait, text, and buttons in viewport */
         align-items: flex-start; /* Position content at top on mobile for better viewport usage */
         justify-content: flex-start;
     }
@@ -1706,11 +1706,11 @@ section {
     .hero-portrait-mobile {
         display: block;
         position: absolute;
-        top: 90px; /* Position below nav */
+        top: 60px; /* Position below nav */
         left: 50%;
         transform: translateX(-50%); /* Center horizontally */
-        width: 280px;
-        height: 280px;
+        width: 220px;
+        height: 220px;
         background-image: url('assets/images/pomp-portrait.webp');
         background-size: cover;
         background-position: center center;
@@ -1729,7 +1729,7 @@ section {
 
     .hero-background-image {
         background-image: url('assets/images/hero-bg.webp');
-        background-size: 120% auto; /* Slightly larger for smooth panning */
+        background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
         filter: brightness(1.1) saturate(1.15); /* Brighter, more vibrant blue */
@@ -1748,7 +1748,7 @@ section {
         align-items: center;
         padding-left: var(--spacing-md);
         padding-right: var(--spacing-md);
-        padding-top: 400px; /* Space for portrait (90px + 280px height + 30px gap) */
+        padding-top: 300px; /* Space for portrait (60px + 220px height + 20px gap) */
         padding-bottom: var(--spacing-lg);
         transform: translateZ(0); /* Force GPU layer to prevent layout shifts */
         z-index: 3; /* Above overlay to ensure portrait visibility */
