@@ -471,6 +471,7 @@ h3, .h3 {
     object-fit: cover;
     object-position: center;
     transform: scale(1.05);
+    filter: brightness(1.1); /* 10% brighter on desktop */
 }
 
 /* Hero Overlay */
