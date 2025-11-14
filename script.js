@@ -258,3 +258,126 @@ document.addEventListener('DOMContentLoaded', () => {
 // gtag('config', 'GA_MEASUREMENT_ID');
 // or
 // analytics.page();
+
+// ===== Contact Form Handling =====
+const contactForm = document.getElementById('contactForm');
+const formStatus = document.getElementById('formStatus');
+const submitButton = document.getElementById('contactSubmit');
+
+// Web3Forms configuration
+const RECAPTCHA_SITE_KEY = '6LfPwQssAAAAAM-0Qyt-7bG6tUAqY_jgZuvuC49n';
+
+if (contactForm) {
+    contactForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        // Get form values
+        const name = document.getElementById('contact-name').value.trim();
+        const email = document.getElementById('contact-email').value.trim();
+        const message = document.getElementById('contact-message').value.trim();
+
+        // Validation
+        if (!name || !email || !message) {
+            showStatus('Please fill in all required fields.', 'error');
+            return false;
+        }
+
+        // Email validation
+        if (!validateEmail(email)) {
+            showStatus('Please enter a valid email address.', 'error');
+            return false;
+        }
+
+        setLoadingState(true);
+
+        try {
+            // Submit to Web3Forms
+            const formData = new FormData(contactForm);
+
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: formData
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                showStatus('Thank you! Your message has been sent successfully. We\'ll get back to you soon.', 'success');
+                contactForm.reset();
+            } else {
+                showStatus('Oops! There was a problem submitting your form. Please try again.', 'error');
+                console.error('Web3Forms error:', result);
+            }
+        } catch (error) {
+            showStatus('Oops! There was a problem submitting your form. Please try again.', 'error');
+            console.error('Form submission error:', error);
+        } finally {
+            setLoadingState(false);
+        }
+    });
+}
+
+/**
+ * Show status message
+ */
+function showStatus(message, type) {
+    if (!formStatus) return;
+
+    formStatus.textContent = message;
+    formStatus.className = `form-status show ${type}`;
+
+    // Auto-hide success messages after 5 seconds
+    if (type === 'success') {
+        setTimeout(() => {
+            formStatus.classList.remove('show');
+        }, 5000);
+    }
+}
+
+/**
+ * Set loading state for submit button
+ */
+function setLoadingState(isLoading) {
+    if (!submitButton) return;
+
+    const btnText = submitButton.querySelector('.btn-text');
+    const btnLoading = submitButton.querySelector('.btn-loading');
+
+    if (isLoading) {
+        submitButton.disabled = true;
+        if (btnText) btnText.style.display = 'none';
+        if (btnLoading) btnLoading.style.display = 'inline-flex';
+    } else {
+        submitButton.disabled = false;
+        if (btnText) btnText.style.display = 'inline-flex';
+        if (btnLoading) btnLoading.style.display = 'none';
+    }
+}
+
+/**
+ * Email validation helper
+ */
+function validateEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+/**
+ * Real-time email validation feedback
+ */
+const emailInput = document.getElementById('contact-email');
+if (emailInput) {
+    emailInput.addEventListener('blur', function() {
+        const email = this.value.trim();
+        if (email && !validateEmail(email)) {
+            this.style.borderColor = 'rgba(239, 68, 68, 0.8)';
+        } else {
+            this.style.borderColor = '';
+        }
+    });
+
+    emailInput.addEventListener('input', function() {
+        // Reset border color when user starts typing
+        this.style.borderColor = '';
+    });
+}
